@@ -1,0 +1,3 @@
+This is a JSBSim model of the arducopter quadrotor. There are some issues with
+prop torque alignment assumptions currently in JSBSim that need to be fixed
+before this model will be completely valid.
