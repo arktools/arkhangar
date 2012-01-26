@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PropertyList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../XMLSchemas/PropertyList.xsd">
+    <sim>
+        <author>James Goppert</author>
+		<description>Shadow (DATCOM aerodynamics)</description>
+        <aircraft-version>0.0.0</aircraft-version>
+        <status>early-production</status>
+        <startup>
+            <splash-title>Shadow UAS (DATCOM aerodynamcis)</splash-title>
+			<splash-texture>Aircraft/shadow/shadow.rgb</splash-texture>
+        </startup>
+        <model>
+            <path>Aircraft/shadow/Models/shadow-model.xml</path>
+        </model>
+        <sound>
+            <path>Aircraft/shadow/shadow-sound.xml</path>
+        </sound>
+		<flight-model>jsb</flight-model>
+        <aero>shadow</aero>
+    </sim>
+</PropertyList>

@@ -1,0 +1,436 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="JSBSim.xsl" type="application/xml"?>
+<fdm_config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/home/torsten/FlightGear/Aircraft/SenecaII/JSBSim.xsd"
+    name="shadow" version="2.0" release="BETA">
+    
+    <fileheader>
+        <author>James Goppert</author>
+        <filecreationdate>2011-12-23</filecreationdate>
+        <description>Shadow UAS (DATCOM)</description>
+        <reference title="Shadow UAS (DATCOM)"/>
+    </fileheader>
+    
+    <metrics>
+        <wingarea unit="FT2">        35.36  </wingarea>
+        <wingspan unit="FT">         19.8  </wingspan>
+        <chord unit="FT">            1.8  </chord>
+        <htailarea unit="FT2">        5.33  </htailarea> 
+        <!--htailarea: in projected xy plane, is this correct?-->
+        <htailarm unit="FT">          2.279  </htailarm>
+        <vtailarea unit="FT2">        0.0  </vtailarea>
+        <vtailarm unit="FT">          0.0  </vtailarm>
+        <!-- 
+            the aerodynamic reference point, common point for 
+            aerodynamic forces (lift and drag) 
+        -->
+        <location name="AERORP" unit="FT">
+            <x>  3.7 </x>
+            <y>  0.0 </y>
+            <z>  0.0 </z>
+        </location>
+        <!-- the eyepoint of the pilot (left or right eye?) -->
+        <location name="EYEPOINT" unit="FT">
+            <x>  0.0 </x>
+            <y>  0.0 </y>
+            <z>  0.0 </z>
+        </location>
+        <!-- the visual reference point of the 3d model -->
+        <location name="VRP" unit="IN">
+            <x>  0.0 </x>
+            <y>  0.0 </y>
+            <z>  0.0 </z>
+        </location>
+    </metrics>
+    
+    <mass_balance>
+        <!--these need to be checked, not important for trim-->
+        <ixx unit="SLUG*FT2"> 430.6 </ixx>
+        <iyy unit="SLUG*FT2"> 417.9 </iyy>
+        <izz unit="SLUG*FT2"> 867.4 </izz>
+        <ixz unit="SLUG*FT2"> 0 </ixz>
+        <emptywt unit="LBS"> 333.0 </emptywt>
+        <!-- the center of gravity -->
+        <location name="CG" unit="FT">
+            <x> 3.0 </x>
+            <y> 0.0 </y>
+            <z> 0.0 </z>
+        </location>
+        <pointmass name="PAYLOAD">
+            <weight unit="LBS"> 0.0 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 3.0 </x>
+                <y> 0.0 </y>
+                <z> 0.0 </z>
+            </location>
+        </pointmass>
+    </mass_balance>
+
+    <ground_reactions>
+        <contact type="BOGEY" name="NOSE_GEAR">
+            <location unit="M">
+                <x> 0.212 </x>
+                <y> 0 </y>
+                <z> -0.381 </z>
+            </location>
+            <spring_coeff unit="LBS/FT">3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 0.8 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <max_steer unit="DEG"> 10</max_steer>
+            <brake_group> NONE</brake_group>
+            <retractable> 0</retractable>
+        </contact>
+
+        <contact type="BOGEY" name="LEFT_GEAR">
+            <location unit="M">
+                <x> 1.395 </x>
+                <y> -0.440 </y>
+                <z> -0.402 </z>
+            </location>
+            <spring_coeff unit="LBS/FT">3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 0.8 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <max_steer unit="DEG"> 0</max_steer>
+            <brake_group> NONE</brake_group>
+            <retractable> 0</retractable>
+        </contact>
+
+        <contact type="BOGEY" name="RIGHT_GEAR">
+            <location unit="M">
+                <x> 1.395 </x>
+                <y> 0.440 </y>
+                <z> -0.402 </z>
+            </location>
+            <spring_coeff unit="LBS/FT">3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 0.8 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <max_steer unit="DEG"> 0</max_steer>
+            <brake_group> NONE</brake_group>
+            <retractable> 0</retractable>
+        </contact>
+
+        <contact type="STRUCTURE" name="NOSE">
+            <location unit="M">
+                <x> 0.0 </x>
+                <y> 0.0 </y>
+                <z> 0.0 </z>
+            </location>
+            <spring_coeff unit="LBS/FT"> 3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 1.0 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+        </contact>
+
+        <contact type="STRUCTURE" name="BOTTOM_FUSELAGE">
+            <location unit="M">
+                <x> 0.181 </x>
+                <y> 0.0 </y>
+                <z> -0.084 </z>
+            </location>
+            <spring_coeff unit="LBS/FT"> 3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 1.0 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+        </contact>
+
+        <contact type="STRUCTURE" name="TOP_FUSELAGE">
+            <location unit="M">
+                <x> 0.465 </x>
+                <y> 0.0 </y>
+                <z> 0.20 </z>
+            </location>
+            <spring_coeff unit="LBS/FT"> 3000  </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 1.0 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+        </contact>
+
+        <contact type="STRUCTURE" name="LEFT_WING">
+            <location unit="M">
+                <x> 1.044 </x>
+                <y> -3.018 </y>
+                <z> 0.152 </z>
+            </location>
+            <spring_coeff unit="LBS/FT"> 3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 1.0 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+        </contact>
+
+        <contact type="STRUCTURE" name="RIGHT_WING">
+            <location unit="M">
+                <x> 1.044 </x>
+                <y> 3.018 </y>
+                <z> 0.152 </z>
+            </location>
+            <spring_coeff unit="LBS/FT"> 3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 1.0 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+        </contact>
+
+        <contact type="STRUCTURE" name="TAIL_TOP">
+            <location unit="M">
+                <x> 3.633 </x>
+                <y> 0.0 </y>
+                <z> 0.646 </z>
+            </location>
+            <spring_coeff unit="LBS/FT"> 3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 1.0 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+        </contact>
+
+        <contact type="STRUCTURE" name="TAIL_BOTTOM">
+            <location unit="M">
+                <x> 3.633 </x>
+                <y> 0.0 </y>
+                <z> 0.138 </z>
+            </location>
+            <spring_coeff unit="LBS/FT"> 3000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 600 </damping_coeff>
+            <static_friction> 1.0 </static_friction>
+            <dynamic_friction> 0.8 </dynamic_friction>
+        </contact>
+
+    </ground_reactions>
+
+    <propulsion>
+        <engine file="UEL-741AR74-1102">
+            <location unit="IN">
+                <x> 5.285 </x>
+                <y> 0 </y>
+                <z> 0.305 </z>
+            </location>
+            <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 0.0 </pitch>
+                <yaw> 0.0 </yaw>
+            </orient>
+            <feed>0</feed>
+            <thruster file="prop">
+                <location unit="IN">
+                    <x> 5.285 </x>
+                    <y> 0.0 </y>
+                    <z> 0.305 </z>
+                </location>
+                <orient unit="DEG">
+                    <roll> 0.0 </roll>
+                    <pitch> 0.0 </pitch>
+                    <yaw> 0.0 </yaw>
+                </orient>
+                <p_factor>1.0</p_factor>
+            </thruster>
+        </engine>
+        <tank type="FUEL">
+            <location unit="IN">
+                <x> 3.0 </x>
+                <y> 0.0 </y>
+                <z> 0.0 </z>
+            </location>
+            <capacity unit="LBS"> 74 </capacity>
+            <contents unit="LBS"> 74 </contents>
+        </tank>
+    </propulsion>
+
+    <flight_control name="shadow">
+        
+        <channel name="Roll">
+            <summer name="Roll Trim Sum">
+                <input>fcs/aileron-cmd-norm</input>
+                <input>fcs/roll-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+            <lag_filter name="Aileron Pos Norm">
+                <input>fcs/roll-trim-sum</input>
+                <c1>125</c1>
+                <output>fcs/aileron-pos-norm</output>
+            </lag_filter>
+
+            <aerosurface_scale name="Aileron Pos Deg">
+                <input>fcs/aileron-pos-norm</input>
+                <range>
+                    <min>-20</min>
+                    <max>20</max>
+                </range>
+                <output>/surface-positions/aileron-pos-deg</output>
+            </aerosurface_scale>
+
+            <pure_gain name="Left Aileron Position Deg">
+                <input>fcs/aileron-pos-deg</input>
+                <gain>1</gain>
+                <output>fcs/left-aileron-pos-deg</output>
+            </pure_gain>
+
+            <pure_gain name ="Left Aileron Position Deg Surface">
+                <input>fcs/left-aileron-pos-deg</input>
+                <gain>1</gain>
+                <output>/surface-positions/left-aileron-pos-deg</output>
+            </pure_gain>
+
+            <pure_gain name="Right Aileron Position Deg">
+                <input>fcs/aileron-pos-deg</input>
+                <gain>1</gain>
+                <output>/surface-positions/right-aileron-pos-deg</output>
+            </pure_gain>
+
+            <pure_gain name="Aileron Pos Rad">
+                <input>fcs/aileron-pos-deg</input>
+                <gain>0.01745</gain>
+                <output>fcs/aileron-pos-rad</output>
+            </pure_gain>
+
+        </channel>
+
+        <channel name="Pitch">
+            <summer name="Pitch Trim Sum">
+                <input>fcs/elevator-cmd-norm</input>
+                <input>fcs/pitch-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+            <lag_filter name="Elevator Position Norm">
+                <input>fcs/pitch-trim-sum</input>
+                <c1>125</c1>
+                <output>fcs/elevator-pos-norm</output>
+            </lag_filter>
+            <aerosurface_scale name="Elevator Position Deg">
+                <input>fcs/elevator-pos-norm</input>
+                <range>
+                    <min>-20</min>
+                    <max>20</max>
+                </range>
+                <output>fcs/elevator-pos-deg</output>
+            </aerosurface_scale>
+            <pure_gain name = "Elevator Position Rad">
+                <input>fcs/elevator-pos-deg</input>
+                <gain>0.01745</gain>
+                <output>fcs/elevator-pos-rad</output>
+            </pure_gain>
+        </channel>
+
+        <channel name="Yaw">
+            <summer name="Yaw Trim Sum">
+                <input>fcs/rudder-cmd-norm</input>
+                <input>fcs/yaw-trim-cmd-norm</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+            <lag_filter name="Rudder Position Norm">
+                <input>fcs/yaw-trim-sum</input>
+                <c1>125</c1>
+                <output>fcs/rudder-pos-norm</output>
+            </lag_filter>
+            <aerosurface_scale name="Rudder Position Deg">
+                <input>fcs/rudder-pos-norm</input>
+                <range>
+                    <min>-20</min>
+                    <max>20</max>
+                </range>
+                <output>fcs/rudder-pos-deg</output>
+            </aerosurface_scale>
+            <pure_gain name="Rudder Position Rad">
+                <input>fcs/rudder-pos-deg</input>
+                <gain>0.01745</gain>
+                <output>fcs/rudder-pos-rad</output>
+            </pure_gain>
+        </channel>
+
+        <channel name="Ruddervators">
+            <pure_gain name="Elevator Mix Left">
+                <input>fcs/elevator-pos-deg</input>
+                <gain>1.0</gain>
+            </pure_gain>
+            <pure_gain name="Elevator Mix Right">
+                <input>fcs/elevator-pos-deg</input>
+                <gain>-1.0</gain>
+            </pure_gain>
+            <pure_gain name="Rudder Mix Left">
+                <input>fcs/rudder-pos-deg</input>
+                <gain>-1.0</gain>
+            </pure_gain>
+            <pure_gain name="Rudder Mix Right">
+                <input>fcs/rudder-pos-deg</input>
+                <gain>-1.0</gain>
+            </pure_gain>
+
+            <summer name="Left Ruddervator Position">
+                <input>fcs/elevator-mix-left</input>
+                <input>fcs/rudder-mix-left</input>
+                <clipto>
+                    <min>-20</min>
+                    <max>20</max>
+                </clipto>
+                <output>/surface-positions/left-ruddervator-pos-deg</output>
+            </summer>
+
+            <summer name = "Right Ruddervator Position">
+                <input>fcs/elevator-mix-right</input>
+                <input>fcs/rudder-mix-right</input>
+                <clipto>
+                    <min>-20</min>
+                    <max>20</max>
+                </clipto>
+                <output>/surface-positions/right-ruddervator-pos-deg</output>
+            </summer>
+
+        </channel>
+
+        <channel name="Flap">
+
+            <lag_filter name="Flap Position Norm">
+                <input>fcs/flap-cmd-norm</input>
+                <c1>125</c1>
+                <output>fcs/flap-pos-norm</output>
+            </lag_filter>
+
+            <aerosurface_scale name="Flap Position Deg">
+                <input>fcs/flap-pos-norm</input>
+                <range>
+                    <min>0</min>
+                    <max>20</max>
+                </range>
+                <output>fcs/flap-pos-deg</output>
+            </aerosurface_scale>
+
+            <pure_gain name = "Flap Position Deg Surface">
+                <input>fcs/flap-pos-deg</input>
+                <gain>1</gain>
+                <output>/surface-positions/flap-pos-deg</output>
+            </pure_gain>
+
+            <pure_gain name="Flap Position Rad">
+                <input>fcs/flap-pos-deg</input>
+                <gain>0.01745</gain>
+                <output>fcs/flap-pos-rad</output>
+            </pure_gain>
+
+        </channel>
+        
+        <!--Throttle (linear vs rpm approx.)-->
+        <channel name="Throttle">
+            <lag_filter name="Throttle Position Norm">
+                <input>fcs/throttle-cmd-norm</input>
+                <c1>6.28</c1>
+                <output>fcs/throttle-pos-norm</output>
+            </lag_filter>
+        </channel>
+        
+    </flight_control>
+
+    <aerodynamics file="Datcom/shadow_aero.xml"/>
+
+</fdm_config>

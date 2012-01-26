@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+  File:     UEL-741AR74-1102.xml
+  Author:   Aero-Matic v 0.82
+
+  Inputs:
+    name:           UEL-741AR74-1102
+    type:           piston
+    power:          38 hp
+    augmented?      no
+    injected?       no
+-->
+
+<piston_engine name="UEL-741AR74-1102">
+  <minmp unit="INHG">          6.0 </minmp>
+  <maxmp unit="INHG">         28.5 </maxmp>
+  <displacement unit="CC"> 618 </displacement>
+  <maxhp>        38.00 </maxhp>
+  <cycles>         4.0 </cycles>
+  <idlerpm>      700.0 </idlerpm>
+  <maxrpm>      8000.0 </maxrpm>
+  <maxthrottle>    1.0 </maxthrottle><!-- Deprecated -->
+  <minthrottle>    0.1 </minthrottle><!-- Deprecated -->
+  <sparkfaildrop>  0.1 </sparkfaildrop>
+  <volumetric-efficiency> 0.85 </volumetric-efficiency>
+<!-- Optional items that affect engine performance -->
+ <!-- Defining <bsfc> over-rides the built-in horsepower calculations -->
+ <!--<bsfc>           0.45 </bsfc>-->
+ <!--<stroke unit="IN">  4.375  </stroke>-->
+ <!--<bore unit="IN">    5.125 </bore>-->
+ <!--<cylinders>         4.0  </cylinders>-->
+ <!--<compression-ratio> 8.0 </compression-ratio>-->
+</piston_engine>
