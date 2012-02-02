@@ -200,7 +200,7 @@ DUMP IOM
 
  
  $SYNTHS XCG=3.7, ZCG=0.0, XW=3.2,  ZW=0.5,  ALIW=0.0,
-         XH=10.62,  ZH=2.12,   ALIH=-10.0,
+         XH=10.62,  ZH=2.12,   ALIH=-7.0,
          SCALE=1.0, VERTUP=.TRUE.$
 
 **********************************  

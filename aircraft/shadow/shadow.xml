@@ -36,7 +36,7 @@
             <z>  0.0 </z>
         </location>
         <!-- the visual reference point of the 3d model -->
-        <location name="VRP" unit="IN">
+        <location name="VRP" unit="FT">
             <x>  0.0 </x>
             <y>  0.0 </y>
             <z>  0.0 </z>
@@ -58,7 +58,7 @@
         </location>
         <pointmass name="PAYLOAD">
             <weight unit="LBS"> 0.0 </weight>
-            <location name="POINTMASS" unit="IN">
+            <location name="POINTMASS" unit="FT">
                 <x> 3.0 </x>
                 <y> 0.0 </y>
                 <z> 0.0 </z>
@@ -203,7 +203,7 @@
 
     <propulsion>
         <engine file="UEL-741AR74-1102">
-            <location unit="IN">
+            <location unit="FT">
                 <x> 5.285 </x>
                 <y> 0 </y>
                 <z> 0.305 </z>
@@ -215,7 +215,7 @@
             </orient>
             <feed>0</feed>
             <thruster file="prop">
-                <location unit="IN">
+                <location unit="FT">
                     <x> 5.285 </x>
                     <y> 0.0 </y>
                     <z> 0.305 </z>
@@ -229,7 +229,7 @@
             </thruster>
         </engine>
         <tank type="FUEL">
-            <location unit="IN">
+            <location unit="FT">
                 <x> 3.0 </x>
                 <y> 0.0 </y>
                 <z> 0.0 </z>
