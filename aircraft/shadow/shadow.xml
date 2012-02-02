@@ -12,14 +12,13 @@
     </fileheader>
     
     <metrics>
-        <wingarea unit="FT2">        35.36  </wingarea>
-        <wingspan unit="FT">         19.8  </wingspan>
-        <chord unit="FT">            1.8  </chord>
-        <htailarea unit="FT2">        5.33  </htailarea> 
-        <!--htailarea: in projected xy plane, is this correct?-->
-        <htailarm unit="FT">          2.279  </htailarm>
-        <vtailarea unit="FT2">        0.0  </vtailarea>
-        <vtailarm unit="FT">          0.0  </vtailarm>
+        <wingarea unit="FT2">       35.3430  </wingarea>
+        <wingspan unit="FT">        19.8000  </wingspan>
+        <chord unit="FT">            1.8035  </chord>
+        <htailarea unit="FT2">       6.9680  </htailarea>
+        <htailarm unit="FT">         7.2941  </htailarm>
+        <vtailarea unit="FT2">        .0000  </vtailarea>
+        <vtailarm unit="FT">        -3.6509  </vtailarm>
         <!-- 
             the aerodynamic reference point, common point for 
             aerodynamic forces (lift and drag) 
