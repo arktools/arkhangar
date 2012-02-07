@@ -19,7 +19,8 @@
   <ixx>   0.03 </ixx>
   <diameter unit="IN">  29.0 </diameter>
   <numblades> 2 </numblades>
-  <gearratio>  1.03 </gearratio>
+  <!--Set gear ratio to maximize thrust.-->
+  <gearratio>  1.7 </gearratio>
   <p_factor>   2.29 </p_factor>
 
   <table name="C_THRUST" type="internal">
