@@ -26,19 +26,19 @@
         <location name="AERORP" unit="FT">
             <x>  3.7 </x>
             <y>  0.0 </y>
-            <z>  0.0 </z>
+            <z>  0.305 </z>
         </location>
         <!-- the eyepoint of the pilot (left or right eye?) -->
         <location name="EYEPOINT" unit="FT">
             <x>  3.7 </x>
             <y>  0.0 </y>
-            <z>  0.0 </z>
+            <z>  0.305 </z>
         </location>
         <!-- the visual reference point of the 3d model -->
         <location name="VRP" unit="FT">
             <x>  3.7 </x>
             <y>  0.0 </y>
-            <z>  0.0 </z>
+            <z>  0.305 </z>
         </location>
     </metrics>
     
@@ -53,14 +53,14 @@
         <location name="CG" unit="FT">
             <x> 3.0 </x>
             <y> 0.0 </y>
-            <z> 0.0 </z>
+            <z> 0.305 </z>
         </location>
         <pointmass name="PAYLOAD">
             <weight unit="LBS"> 0.0 </weight>
             <location name="POINTMASS" unit="FT">
                 <x> 3.0 </x>
                 <y> 0.0 </y>
-                <z> 0.0 </z>
+                <z> 0.305 </z>
             </location>
         </pointmass>
     </mass_balance>
@@ -231,7 +231,7 @@
             <location unit="FT">
                 <x> 3.0 </x>
                 <y> 0.0 </y>
-                <z> 0.0 </z>
+                <z> 0.305 </z>
             </location>
             <capacity unit="LBS"> 74 </capacity>
             <contents unit="LBS"> 74 </contents>
