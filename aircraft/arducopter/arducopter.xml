@@ -36,7 +36,7 @@
     <ixx unit="KG*M2"> 0.036 </ixx>
     <iyy unit="KG*M2"> 0.036 </iyy>
     <izz unit="KG*M2">  0.036 </izz>
-    <emptywt unit="KG"> 1.0 </emptywt>
+    <emptywt unit="KG"> 0.5 </emptywt>
     <location name="CG" unit="IN">
       <x>  0.0 </x>
       <y>  0.0 </y>
@@ -251,8 +251,8 @@
     </channel>
     <!--By setting the following mix ratios to add to one -->
     <!--we ensure saturation doesn't violate the mixing -->
-    <property value="0.60"> fcs/throttle-auth </property>
-    <property value="0.40"> fcs/roll-pitch-auth </property>
+    <property value="0.80"> fcs/throttle-auth </property>
+    <property value="0.10"> fcs/roll-pitch-auth </property>
     <property value="0.10"> fcs/yaw-auth </property>
     <channel name="Power">
       <fcs_function name="Power FWD">
