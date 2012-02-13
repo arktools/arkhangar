@@ -3,12 +3,6 @@
 
 	<!--Plane-->
     <path>shadow.ac</path>
-    <offsets>
-        <z-m>0.0</z-m>
-        <y-m>0</y-m>
-        <x-m>0.0</x-m>
-        <pitch-deg>0</pitch-deg>
-    </offsets>
 
 	<!--Ruddervators-->
     <animation>

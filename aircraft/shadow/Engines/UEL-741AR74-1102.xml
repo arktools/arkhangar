@@ -26,8 +26,11 @@
 <!-- Optional items that affect engine performance -->
  <!-- Defining <bsfc> over-rides the built-in horsepower calculations -->
  <!--<bsfc>           0.45 </bsfc>-->
- <stroke unit="IN">  1.5  </stroke>
+ <!--<stroke unit="IN">  1.15  </stroke>-->
+ <stroke unit="IN">  0.3  </stroke>
  <!--<bore unit="IN">    5.125 </bore>-->
  <!--<cylinders>         4.0  </cylinders>-->
- <!--<compression-ratio> 8.0 </compression-ratio>-->
+ <compression-ratio> 9.5 </compression-ratio>
 </piston_engine>
+
+<!--Set stroke to match thrust table given.-->
