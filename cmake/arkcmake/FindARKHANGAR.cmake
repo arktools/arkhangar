@@ -26,7 +26,7 @@ set(ARKHANGAR_DATA_DIR ${ARKHANGAR_DATA_DIR_SEARCH}/arkhangar)
 set(ARKHANGAR_PROCESS_INCLUDES ARKHANGAR_INCLUDE_DIR)
 libfind_process(ARKHANGAR)
 
-macro(find_or_build_arkhangar TAG EP_BASE_DIR EP_INSTALL_PREFIX EP_DATADIR)
+macro(build_arkhangar TAG EP_BASE_DIR EP_INSTALL_PREFIX EP_DATADIR)
     find_package(ARKCOMM ${TAG})
     if( NOT ARKHANGAR_FOUND)
         ExternalProject_Add(arkhangar
@@ -34,7 +34,11 @@ macro(find_or_build_arkhangar TAG EP_BASE_DIR EP_INSTALL_PREFIX EP_DATADIR)
             GIT_TAG ${TAG}
             UPDATE_COMMAND ""
             INSTALL_DIR ${EP_BASE_DIR}/${EP_INSTALL_PREFIX}
-            CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EP_INSTALL_PREFIX}
+            CMAKE_ARGS
+                -DEP_BASE_DIR=${EP_BASE_DIR}
+                -DEP_INSTALL_PREFIX=${EP_INSTALL_PREFIX}
+                -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+                -DCMAKE_INSTALL_PREFIX=${EP_INSTALL_PREFIX}
             INSTALL_COMMAND make DESTDIR=${EP_BASE_DIR} install
         )
         set(ARKHANGAR_INCLUDE_DIR "")
