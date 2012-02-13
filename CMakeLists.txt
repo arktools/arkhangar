@@ -2,40 +2,22 @@ project (arkhangar)
 
 # Requried cmake version
 cmake_minimum_required (VERSION 2.8.2)
-
-# global needed variables
-set(APPLICATION_NAME ${PROJECT_NAME})
-set(PROJECT_CONTACT_EMAIL james.goppert@gmail.com)
-set(PROJECT_CONTACT_VENDOR arkTools)
-
-# set these for release
 set(APPLICATION_VERSION_MAJOR "0")
 set(APPLICATION_VERSION_MINO "1")
 set(APPLICATION_VERSION_PATCH "0")
-
-set(APPLICATION_VERSION "${APPLICATION_VERSION_MAJOR}.${APPLICATION_VERSION_MINOR}.${APPLICATION_VERSION_PATCH}")
-set(LIBRARY_VERSION ${APPLICATION_VERSION})
-
-# SOVERSION scheme: CURRENT.AGE.REVISION
-#   If there was an incompatible interface change:
-#     Increment CURRENT. Set AGE and REVISION to 0
-#   If there was a compatible interface change:
-#     Increment AGE. Set REVISION to 0
-#   If the source code was changed, but there were no interface changes:
-#     Increment REVISION.
 set(LIBRARY_SOVERSION "0.0.0")
+set(PROJECT_CONTACT_EMAIL james.goppert@gmail.com)
+set(PROJECT_CONTACT_VENDOR arkTools)
 
-# where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
+# modules
 set(CMAKE_MODULE_PATH
-    ${CMAKE_SOURCE_DIR}/cmake
-    ${CMAKE_SOURCE_DIR}/cmake/arkcmake
+	${CMAKE_SOURCE_DIR}/cmake
+	${CMAKE_SOURCE_DIR}/cmake/arkcmake
 )
 
-# add definitions
-include(DefineCMakeDefaults)
-include(DefinePlatformDefaults)
-include(DefineCompilerFlags)
-include(DefineInstallationPaths)
+# use common setup
+include(CommonSetup)
+set(LIBRARY_VERSION ${APPLICATION_VERSION})
 
 # cpack
 if(WIN32)
@@ -82,82 +64,6 @@ set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README")
 set(CPACK_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 #set(CPACK_PACKAGE_EXECUTABLES "MyExecutable" "My Executable")
 include(CPack)
-
-# disallow in-source build
-include(MacroEnsureOutOfSourceBuild)
-macro_ensure_out_of_source_build("${PROJECT_NAME} requires an out of source build. 
-Please create a separate build directory and run 'cmake /path/to/${PROJECT_NAME} [options]' there.")
-
-# add macros
-include(MacroAddPlugin)
-include(MacroCopyFile)
-include(MacroSetDefault)
-include(language_support_v2)
-include(MacroAddLinkFlags)
-include(ExternalProject)
-include(CTest)
-
-# settings
-option(DEV_MODE "Setup paths for developer testing." OFF)
-option(BUILD_SHARED_LIBS "Build shared libraries instead of static." OFF)
-
-# built variables
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-
-# set build type
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
-      "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
-      FORCE)
-endif(NOT CMAKE_BUILD_TYPE)
-
-# add make dist target
-add_custom_target(dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
-
-# external projects
-if(NOT EP_BASE_DIR)
-    set(EP_BASE_DIR "${CMAKE_BINARY_DIR}/CMakeExternals")
-endif()
-if(NOT EP_INSTALL_PREFIX)
-    set(EP_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
-endif()
-
-set_property(DIRECTORY PROPERTY EP_BASE ${EP_BASE_DIR})
-
-
-# external projects
-set(EP_BASE_DIR "${CMAKE_BINARY_DIR}/CMakeExternals")
-set_property(DIRECTORY PROPERTY EP_BASE ${EP_BASE_DIR})
-set(EP_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}-external)
-
-# install/developer mode
-if(DEV_MODE)
-    message(STATUS "configuring for in source build")
-    set(DATADIR ${PROJECT_SOURCE_DIR}/data)
-    set(LIBDIR ${CMAKE_BINARY_DIR}/lib)
-    set(BINDIR ${CMAKE_BINARY_DIR}/bin)
-    set(EP_DATADIR ${EP_BASE_DIR}/${EP_INSTALL_PREFIX}/share)
-else()
-    message(STATUS "configuring for install build")
-    set(DATADIR ${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}/data)
-    set(LIBDIR ${CMAKE_INSTALL_PREFIX}/lib)
-    set(BINDIR ${CMAKE_INSTALL_PREFIX}/bin)
-    set(EP_DATADIR ${EP_INSTALL_PREFIX}/share)
-endif()
-set(EP_INCLUDEDIR ${EP_BASE_DIR}/${EP_INSTALL_PREFIX}/include)
-set(EP_LIBDIR ${EP_BASE_DIR}/${EP_INSTALL_PREFIX}/lib)
-
-# static lib prefix
-if(WIN32)
-    set(STATIC_LIB_PREFIX "")
-elseif(APPLE)
-    set(STATIC_LIB_PREFIX "lib")
-elseif(UNIX)
-    set(STATIC_LIB_PREFIX "lib")
-else()
-    message(FATAL_ERROR "unknown operating system")
-endif()
 
 # install files
 install(DIRECTORY aircraft/ DESTINATION share/${PROJECT_NAME}/aircraft)
