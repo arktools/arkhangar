@@ -282,36 +282,90 @@
 
 <!-- ********************************************************************** -->
 
+    <axis name="Force">
 
-     <axis name="SIDE">
+        <function name="aero/coefficient/CnDf2">
+            <description>
+                Normal force coefficient due to fin 2 deflection
+            </description>
+            <product>
+                <property>aero/qbar-psf</property>
+                <property>metrics/Sw-sqft</property>
+                <property>metrics/bw-ft</property>
+                <table>
+                    <independentVar lookup="row">aero/alpha-deg</independentVar>
+                    <independentVar lookup="column">fcs/fin2-pos-deg</independentVar>
+                    <tableData>
+                        0.0000     -25.0000   -20.0000   -15.0000   -10.0000   -5.0000    0.0000     5.0000     10.0000    15.0000    20.0000
+                        0.0000     -2.3312    -1.9336    -1.4448    -0.9524    -0.4730    0.0000     0.4730     0.9524     1.4448     1.9336
+                        4.0000     -1.1891    -0.7351    -0.2589    0.2104     0.6795     1.1543     1.6416     2.1483     2.6684     3.1013
+                        8.0000     0.0865     0.5454     1.0019     1.4636     1.9363     2.4267     2.9422     3.4890     3.9562     4.3616
+                        12.0000    1.5548     1.9941     2.4444     2.9109     3.4003     3.9201     4.4836     4.9842     5.4282     5.7982
+                        16.0000    3.0378     3.4723     3.9274     4.4090     4.9248     5.4882     6.0275     6.5089     6.9247     7.2559
+                        20.0000    4.4962     4.9352     5.4048     5.9119     6.4669     7.0384     7.5501     8.0064     8.3872     8.6735
+                        24.0000    5.8542     6.3073     6.8017     7.3463     7.9377     8.4716     8.9625     9.3876     9.7251     9.9640
+                        28.0000    7.2733     7.7498     8.2798     8.8762     9.4290     9.9490     10.4136    10.7996    11.0937    11.2688
+                    </tableData>
+                </table>
+            </product>
+        </function>
 
-         <!-- modified -->
-         <function name="aero/coefficient/Cyb">
-             <description>
-                 Side Force coefficient due to Sideslip(per degree)
-                 Contributes to damping of Dutch Roll mode
-             </description>
-             <product>
-                 <property>aero/qbar-psf</property>
-                 <property>metrics/Sw-sqft</property>
-                 <property>aero/beta-deg</property>
-                 <table>
-                     <independentVar lookup="row">aero/alpha-deg</independentVar>
-                     <tableData>
-                         0.00     -0.1931
-                         4.00     -0.2020
-                         8.00     -0.2089
-                         12.00     -0.2092
-                         16.00     -0.1980
-                         20.00     -0.1841
-                         24.00     -0.1690
-                         28.00     -0.1595
-                     </tableData>
-                 </table>
-             </product>
-         </function>
+        <function name="aero/coefficient/CaDf2">
+            <description>
+                Axial force coefficient due to fin 2 deflection
+            </description>
+            <product>
+                <property>aero/qbar-psf</property>
+                <property>metrics/Sw-sqft</property>
+                <property>metrics/bw-ft</property>
+                <table>
+                    <independentVar lookup="row">aero/alpha-deg</independentVar>
+                    <independentVar lookup="column">fcs/fin2-pos-deg</independentVar>
+                    <tableData>
+                        0.0000     -25.0000   -20.0000   -15.0000   -10.0000   -5.0000    0.0000     5.0000     10.0000    15.0000    20.0000
+                        0.0000     1.3698     1.0178     0.7269     0.5255     0.4093     0.3713     0.4093     0.5255     0.7269     1.0178
+                        4.0000     1.1889     0.8578     0.6123     0.4538     0.3743     0.3707     0.4442     0.6007     0.8480     1.1634
+                        8.0000     1.0039     0.7119     0.5097     0.3872     0.3402     0.3689     0.4779     0.6767     0.9509     1.2942
+                        12.0000    0.8193     0.5743     0.4096     0.3198     0.3041     0.3658     0.5139     0.7444     1.0493     1.4166
+                        16.0000    0.6638     0.4542     0.3194     0.2569     0.2688     0.3617     0.5420     0.8019     1.1315     1.5164
+                        20.0000    0.5128     0.3342     0.2265     0.1901     0.2300     0.3564     0.5683     0.8560     1.2076     1.6065
+                        24.0000    0.3624     0.2112     0.1285     0.1178     0.1882     0.3500     0.5925     0.9062     1.2764     1.6864
+                        28.0000    0.2137     0.0861     0.0261     0.0398     0.1489     0.3426     0.6136     0.9499     1.3360     1.7488
+                    </tableData>
+                </table>
+            </product>
+        </function>
 
-         <!-- NOT IN DATCOM OUTPUT
+
+        <axis name="SIDE">
+
+            <!-- modified -->
+            <function name="aero/coefficient/Cyb">
+                <description>
+                    Side Force coefficient due to Sideslip(per degree)
+                    Contributes to damping of Dutch Roll mode
+                </description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>aero/beta-deg</property>
+                    <table>
+                        <independentVar lookup="row">aero/alpha-deg</independentVar>
+                        <tableData>
+                            0.00     -0.1931
+                            4.00     -0.2020
+                            8.00     -0.2089
+                            12.00     -0.2092
+                            16.00     -0.1980
+                            20.00     -0.1841
+                            24.00     -0.1690
+                            28.00     -0.1595
+                        </tableData>
+                    </table>
+                </product>
+            </function>
+
+            <!-- NOT IN DATCOM OUTPUT
          <function name="aero/coefficient/Cyp">
             <description>
                Side Force Coefficient due to Roll Rate(per degree)
@@ -553,7 +607,7 @@
             <property>aero/qbar-psf</property>
             <property>metrics/Sw-sqft</property>
             <property>metrics/bw-ft</property>
-	    <value>0.000</value>
+            <value>0.000</value>
         </product>
     </function>
 
@@ -566,11 +620,11 @@
             <property>aero/qbar-psf</property>
             <property>metrics/Sw-sqft</property>
             <property>metrics/bw-ft</property>
-	    <value>0.000</value>
+            <value>0.000</value>
         </product>
     </function>
 
-     </axis>
+</axis>
 
 
 
@@ -676,33 +730,33 @@
         </product>
     </function>
 
-             <function name="aero/coefficient/CnDa">
-             <description>
-                 Pitch moment coefficient due to fin 2 deflection
-             </description>
-             <product>
-                 <property>aero/qbar-psf</property>
-                 <property>metrics/Sw-sqft</property>
-                 <property>metrics/bw-ft</property>
-                 <table>
-                     <independentVar lookup="row">aero/alpha-deg</independentVar>
-                     <independentVar lookup="column">fcs/fin2-pos-deg</independentVar>
-                     <tableData>
-			       0.0000     -25.0000   -20.0000   -15.0000   -10.0000   -5.0000    0.0000     5.0000     10.0000     15.0000     20.0000
-			       0.0000     10.2558    8.5066     6.3563     4.1899     2.0809     0.0000     -2.0809    -4.1899     -6.3563     -8.5066
-			       4.0000     8.8479     6.8503     4.7552     2.6904     0.6268     -1.4625    -3.6062    -5.8355     -8.1239     -10.0284
-			       8.0000     7.3297     5.3105     3.3020     1.2704     -0.8098    -2.9675    -5.2358    -7.6414     -9.6972     -11.4811
-			       12.0000    5.6855     3.7521     1.7707     -0.2823    -2.4356    -4.7233    -7.2029    -9.4056     -11.3596    -12.9879
-			       16.0000    4.2531     2.3409     0.3383     -1.7814    -4.0511    -6.5309    -8.9042    -11.0227    -12.8526    -14.3101
-			       20.0000    2.8054     0.8730     -1.1935    -3.4256    -5.8680    -8.3834    -10.6357   -12.6439    -14.3198    -15.5799
-			       24.0000    1.3263     -0.6680    -2.8439    -5.2411    -7.8442    -10.1943   -12.3549   -14.2262    -15.7115    -16.7632
-			       28.0000    -0.2530    -2.3506    -4.6834    -7.3088    -9.7419    -12.0308   -14.0760   -15.7750    -17.0693    -17.8401
-                     </tableData>
-                 </table>
-             </product>
-         </function>
-    
-    </axis>
+    <function name="aero/coefficient/CmDf2">
+        <description>
+            Pitch moment coefficient due to fin 2 deflection
+        </description>
+        <product>
+            <property>aero/qbar-psf</property>
+            <property>metrics/Sw-sqft</property>
+            <property>metrics/bw-ft</property>
+            <table>
+                <independentVar lookup="row">aero/alpha-deg</independentVar>
+                <independentVar lookup="column">fcs/fin2-pos-deg</independentVar>
+                <tableData>
+                    0.0000     -25.0000   -20.0000   -15.0000   -10.0000   -5.0000    0.0000     5.0000     10.0000     15.0000     20.0000
+                    0.0000     10.2558    8.5066     6.3563     4.1899     2.0809     0.0000     -2.0809    -4.1899     -6.3563     -8.5066
+                    4.0000     8.8479     6.8503     4.7552     2.6904     0.6268     -1.4625    -3.6062    -5.8355     -8.1239     -10.0284
+                    8.0000     7.3297     5.3105     3.3020     1.2704     -0.8098    -2.9675    -5.2358    -7.6414     -9.6972     -11.4811
+                    12.0000    5.6855     3.7521     1.7707     -0.2823    -2.4356    -4.7233    -7.2029    -9.4056     -11.3596    -12.9879
+                    16.0000    4.2531     2.3409     0.3383     -1.7814    -4.0511    -6.5309    -8.9042    -11.0227    -12.8526    -14.3101
+                    20.0000    2.8054     0.8730     -1.1935    -3.4256    -5.8680    -8.3834    -10.6357   -12.6439    -14.3198    -15.5799
+                    24.0000    1.3263     -0.6680    -2.8439    -5.2411    -7.8442    -10.1943   -12.3549   -14.2262    -15.7115    -16.7632
+                    28.0000    -0.2530    -2.3506    -4.6834    -7.3088    -9.7419    -12.0308   -14.0760   -15.7750    -17.0693    -17.8401
+                </tableData>
+            </table>
+        </product>
+    </function>
+
+</axis>
 
 
 
