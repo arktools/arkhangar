@@ -7,13 +7,13 @@
         <status>early-production</status>
         <startup>
             <splash-title>Multiplex Easy Star (wind tunnel aerodynamics)</splash-title>
-			<splash-texture>Aircraft/missile/splash.rgb</splash-texture>
+			<splash-texture>Aircraft/easystar_missile/splash.rgb</splash-texture>
         </startup>
         <model>
-            <path>Aircraft/missile/Models/easystar-model.xml</path>
+            <path>Aircraft/easystar_missile/Models/easystar-model.xml</path>
         </model>
         <sound>
-            <path>Aircraft/missile/easystar-sound.xml</path>
+            <path>Aircraft/easystar_missile/easystar-sound.xml</path>
         </sound>
 		<flight-model>jsb</flight-model>
         <aero>easystar-windtunnel</aero>

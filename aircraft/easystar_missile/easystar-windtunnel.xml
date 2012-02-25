@@ -194,7 +194,7 @@
             </thruster>
         </engine>
 		<!--throws warning if tank not included, no real purpose-->
-		<tank type="FUEL">    <!-- Tank number 0 -->
+        	<tank type="FUEL">    <!-- Tank number 0 -->
 			<location unit="IN">
 				<x> 0.0 </x>
 				<y> 0.0 </y>
@@ -203,6 +203,15 @@
 			<capacity unit="LBS"> 8 </capacity>
 			<contents unit="LBS"> 8 </contents>
 		</tank>
+		<tank type="OXIDIZER">    <!-- Tank number 1 -->
+                <location unit="IN">
+                    <x> 0 </x>
+                    <y> 0 </y>
+               	    <z> 0 </z>
+        	    </location>
+       	            <capacity unit="LBS"> 8 </capacity>
+        	    <contents unit="LBS"> 8 </contents>	
+	        </tank>
     </propulsion>
     <!-- **********************************************************************
         FLIGHT CONTROLS
