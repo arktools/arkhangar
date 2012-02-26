@@ -10,6 +10,43 @@
         <pitch-deg>0</pitch-deg>
     </offsets>
 
+    <animation>
+        <type>select</type>
+        <object-name>Booster</object-name>
+        <condition>
+            <equals>
+                <value>1</value>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Plume</object-name>
+        <condition>
+            <not-equals>
+                <property>engines/engine/thrust_lb</property>
+                <value>0</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>scale</type>
+        <object-name>Plume</object-name>
+        <property>engines/engine/thrust_lb</property>
+		<x-offset>-5</x-offset>
+		<y-offset>0</y-offset>
+		<z-offset>0</z-offset>
+        <x-min>1</x-min>
+        <y-min>1</y-min>
+        <z-min>1</z-min>
+        <x-factor>0.00005</x-factor>
+        <y-factor>0</y-factor>
+        <z-factor>0</z-factor>
+    </animation>
+
 	<!--Elevator-->
     <!--<animation>-->
         <!--<type>rotate</type>-->

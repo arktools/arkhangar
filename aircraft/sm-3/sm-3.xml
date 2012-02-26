@@ -13,13 +13,13 @@
 <?xml-stylesheet href="JSBSim.xsl" type="application/xml"?>
 <fdm_config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="file:/home/torsten/FlightGear/Aircraft/SenecaII/JSBSim.xsd"
-    name="easystar-windtunnel" version="2.0" release="BETA">
+    name="sm-3" version="1.0" release="BETA">
     
     <fileheader>
-        <author>James Goppert</author>
-        <filecreationdate>2010-6-3</filecreationdate>
-        <description>Multiplex Easy Star (wind tunnel)</description>
-        <reference title="Multiplex Easy Star (wind tunnel)"/>
+        <author>Purdue HSL</author>
+        <filecreationdate>2-2012</filecreationdate>
+        <description>SM-3</description>
+        <reference title="SM-3"/>
     </fileheader>
     
     <!-- **********************************************************************
@@ -216,7 +216,7 @@
     <!-- **********************************************************************
         FLIGHT CONTROLS
         ********************************************************************** -->
-    <flight_control name="easystar">
+    <flight_control name="sm-3">
         <!--       
             Elevator
         -->

@@ -16,6 +16,7 @@
             <path>Aircraft/sm-3/sm-3-sound.xml</path>
         </sound>
 		<flight-model>jsb</flight-model>
-        <aero>sm-3</aero>
+        <aero>X15</aero>
+        <!--<aero>sm-3</aero>-->
     </sim>
 </PropertyList>
