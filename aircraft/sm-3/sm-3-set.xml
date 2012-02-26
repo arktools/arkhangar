@@ -2,20 +2,20 @@
 <PropertyList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../XMLSchemas/PropertyList.xsd">
     <sim>
         <author>James Goppert</author>
-		<description>Multiplex Easy Star (wind tunnel aerodynamics)</description>
+		<description>SM-3 Missile</description>
         <aircraft-version>0.0.0</aircraft-version>
         <status>early-production</status>
         <startup>
-            <splash-title>Multiplex Easy Star (wind tunnel aerodynamics)</splash-title>
-			<splash-texture>Aircraft/easystar_missile/splash.rgb</splash-texture>
+            <splash-title>SM-3 Missile</splash-title>
+			<splash-texture>Aircraft/sm-3/sm-3.rgb</splash-texture>
         </startup>
         <model>
-            <path>Aircraft/easystar_missile/Models/easystar-model.xml</path>
+            <path>Aircraft/sm-3/Models/sm-3-model.xml</path>
         </model>
         <sound>
-            <path>Aircraft/easystar_missile/easystar-sound.xml</path>
+            <path>Aircraft/sm-3/sm-3-sound.xml</path>
         </sound>
 		<flight-model>jsb</flight-model>
-        <aero>easystar-windtunnel</aero>
+        <aero>sm-3</aero>
     </sim>
 </PropertyList>

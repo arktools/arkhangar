@@ -10,9 +10,9 @@
     is printed out at ten second intervals. 
   </description>
 
-  <use aircraft="shadow" initialize="cruise_steady_turn_init"/> 
+  <use aircraft="shadow" initialize="scripts/cruise_steady_turn_init"/> 
 
-  <run start="0" end="100" dt="0.008333">
+  <run start="0" end="1" dt="0.008333">
 
     <property value="0"> simulation/notify-time-trigger </property>
 

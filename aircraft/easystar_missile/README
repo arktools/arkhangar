@@ -1,8 +1,0 @@
-This is a JSBSim flight gear model of a multiplex easystar.
-
-To different models for the aerodynamics are provided.
-
-easystar-datcom.xml is based of the USAF DATCOM predictions for aerodynamics.
-
-easystar-windtunnel.xml provides a model based of data collected at a wind tunnel.
-Where data was missing it was augmented with the DATCOM model.
