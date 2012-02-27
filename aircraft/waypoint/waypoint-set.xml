@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PropertyList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../XMLSchemas/PropertyList.xsd">
+    <sim>
+        <author>James Goppert</author>
+        <description>Waypoint</description>
+        <aircraft-version>0.0.0</aircraft-version>
+        <status>early-production</status>
+        <startup>
+            <splash-title>Waypoint</splash-title>
+        </startup>
+        <flight-model>jsb</flight-model>
+        <aero>waypoint</aero>
+        <model>
+            <path>Aircraft/waypoint/Models/waypoint-model.xml</path>
+        </model>
+    </sim>
+</PropertyList>
