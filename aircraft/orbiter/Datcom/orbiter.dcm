@@ -263,8 +263,8 @@ DUMP IOM
 *   METHOD  1.0 = Use existing methods (default)
 *           2.0 = Use Jorgensen method
 
- $BODY   NX=6.0,
-	X(1) =0.0, 1.89, 0.17, 21.2, 28.0, 33.0,
+ $BODY   NX=7.0,
+	X(1) =0.0, 1.89, 9.17, 21.2, 28.0, 33.0,
 	R(1) =0.0, 1.89, 1.653, 1.26, 0.945, 0.866,
 *	ZU(1)=0.0, 1.5, 2.25, 3.25,  3.25,  3.25, 3.75,  4.63, 0.7,  0.6,  0.5,  0.0,
 *	ZL(1)=0.0, 0.0,  -0.5, -1.23, -1.23, -1.8, -1.25, -1.0, -0.7, -0.6, -0.5, 0.0,
@@ -687,9 +687,9 @@ NACA H 4 0009
 *           positive aft of CG
 *           Only required for supersonic and hypersonic speed regimes.
 
- $HTPLNF CHRDTP=1.5, SSPNOP=3.0, SSPNE=8.75, SSPN=9.25, 
-	CHRDBP=3.75, CHRDR=4.0, SAVSI=0.0, SAVSO=49.4, TWISTA=0.0,
-	CHSTAT=0.0, TYPE=1.0$
+ $HTPLNF CHRDTP=0.0, SSPNOP=0.0, SSPNE=0.0, SSPN=0.0, 
+	CHRDBP=0.0, CHRDR=0.0, SAVSI=0.0, SAVSO=0.0, TWISTA=0.0,
+	CHSTAT=0.0, TYPE=0.0$
 
 
 ******************************************
@@ -720,8 +720,8 @@ NACA H 4 0009
 *           horizontal tail exposed root chord (array 20)
 *           Only required for supersonic and hypersonic speed regimes.
 
- $VTPLNF CHRDTP=1.0, SSPNE=6.5, SSPN=7.25, 
-	CHRDR=4.63, SAVSI=30.0, CHSTAT=0.0, TYPE=1.0$
+ $VTPLNF CHRDTP=0.0, SSPNE=0.0, SSPN=0.0, 
+	CHRDR=0.0, SAVSI=0.0, CHSTAT=0.0, TYPE=0.0$
 
 
 ******************************************
@@ -920,10 +920,10 @@ NACA V 4 0009
 *   BAPR75  Blade angle at 0.75 propller radius
 *   YP      Lateral location of engine
 *   CROT    True if counter rotating, false if non counter rotating
- $PROPWR AIETLP=-5.19, NENGSP=1.0, THSTCP=0.0,
-	PHALOC=19.0, PHVLOC=4.0, PRPRAD=2.69,
-	BWAPR3=0.5, BWAPR6=0.38, BWAPR9=0.25, BAPR75=26.7,
-	NOPBPE=1.0, YP=0.0, CROT=.FALSE.$
+ $PROPWR AIETLP=0.0, NENGSP=1.0, THSTCP=1.0,
+	PHALOC=33.43, PHVLOC=0.0, PRPRAD=5.63,
+	BWAPR3=0.669, BWAPR6=0.74, BWAPR9=0.4, BAPR75=0.15,
+	NOPBPE=2.0, YP=0.0, CROT=.FALSE.$
 
 *********************************
 *    Jet Power Effects parameters  pg 51
