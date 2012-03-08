@@ -10,7 +10,7 @@
 			<splash-texture>Aircraft/orbiter/splash.rgb</splash-texture>
         </startup>
         <model>
-            <path>Aircraft/orbiter/Models/easystar-model.xml</path>
+            <path>Aircraft/orbiter/Models/orbiter-model.xml</path>
         </model>
         <sound>
             <path>Aircraft/orbiter/easystar-sound.xml</path>
