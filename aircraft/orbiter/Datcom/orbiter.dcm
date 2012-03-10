@@ -1,5 +1,5 @@
 *
-*   File : easystar.dcm
+*   File : orbiter.dcm
 *
 *   Purpose : This is an input file for the Digital Datcom program.
 *
@@ -247,7 +247,7 @@ DUMP IOM
 
  $BODY   NX=6.0,
 	X(1) =0.0, 1.89, 9.17, 21.2, 28.0, 33.0,
-	R(1) =0.0, 1.89, 1.653, 1.26, 0.945, 0.866,
+	R(1) =0.1, 1.89, 1.653, 1.26, 0.945, 0.866,
 	ITYPE=1.0, METHOD=1.0$
 
 
@@ -553,7 +553,7 @@ SAVE
 * the flap effects. We can't save this data, as we are
 * also going to do control surfaces on the horizontal tail.
 
-*CASEID FLAPS: Citation II Model 550 Aircraft
+*CASEID FLAPS: Orbiter
 *NEXT CASE
 
 *************************************************************
@@ -619,7 +619,7 @@ SAVE
 *   Terminates the reading of input cards and begins execution of
 *   the case. Case data are destroyed following execution of a case,
 *   unless the SAVE card is present.
-*CASEID AILERONS: Citation II Model 550 Aircraft
+*CASEID AILERONS: Orbiter
 *SAVE
 *NEXT CASE
 
@@ -628,7 +628,7 @@ SAVE
 *       Horizontal Tail Sectional Characteristics  pg 39-40
 *************************************************
 
-NACA H 4 0009
+*NACA H 4 0009
 
 
 *********************************************
@@ -665,9 +665,9 @@ NACA H 4 0009
 *           positive aft of CG
 *           Only required for supersonic and hypersonic speed regimes.
 
- $HTPLNF CHRDTP=0.0, SSPNOP=0.0, SSPNE=0.0, SSPN=0.0, 
-	CHRDBP=0.0, CHRDR=0.0, SAVSI=0.0, SAVSO=0.0, TWISTA=0.0,
-	CHSTAT=0.0, TYPE=0.0$
+* $HTPLNF CHRDTP=0.0, SSPNOP=0.0, SSPNE=0.0, SSPN=0.0, 
+*	CHRDBP=0.0, CHRDR=0.0, SAVSI=0.0, SAVSO=0.0, TWISTA=0.0,
+*	CHSTAT=0.0, TYPE=0.0$
 
 
 ******************************************
@@ -698,8 +698,8 @@ NACA H 4 0009
 *           horizontal tail exposed root chord (array 20)
 *           Only required for supersonic and hypersonic speed regimes.
 
-  $VTPLNF CHRDTP=0.0, SSPNE=0.0, SSPN=0.0, 
-    CHRDR=0.0, SAVSI=0.0, CHSTAT=0.0, TYPE=0.0$
+*  $VTPLNF CHRDTP=0.0, SSPNE=0.0, SSPN=0.0, 
+*    CHRDR=0.0, SAVSI=0.0, CHSTAT=0.0, TYPE=0.0$
 
 
 ******************************************
@@ -818,7 +818,7 @@ NACA H 4 0009
 **************************************
 * Same build up as wing, if you'd like to use that instead.
 
-NACA V 4 0009
+* NACA V 4 0009
 
 
 
@@ -907,7 +907,7 @@ NACA V 4 0009
 *********************************
 *
 *  IMPORTANT NOTE: The effects of POWER are including in the DATCOM
-*  output file (Citation.out in this case), at the bottom where the
+*  output file (Orbiter.out in this case), at the bottom where the
 *  total aircraft parameters are listed (CD, CL, CM, etc.). For the
 *  Datcom+ output files, the power effects are removed and presented
 *  (if not now, they will be some day) in a separate table. That way,
@@ -938,4 +938,4 @@ NACA V 4 0009
 *         AMBTMP=59.7, AMBSTP=2116.8, JERAD=0.755$
 
 
-CASEID TOTAL: Multiplex Easy Star 
+CASEID TOTAL: Orbiter
