@@ -47,12 +47,12 @@
         <object-name>prop</object-name>
         <property>/engines/engine[0]/rpm</property>
         <axis>
-            <x1-m>1.611</x1-m>
+            <x1-m>0.849</x1-m>
             <y1-m>0.00</y1-m>
-            <z1-m>0.093</z1-m>
-            <x2-m>1.779</x2-m>
-            <y2-m>0.000</y2-m>
-            <z2-m>0.091</z2-m>
+            <z1-m>0.00</z1-m>
+            <x2-m>0.849</x2-m>
+            <y2-m>0.00</y2-m>
+            <z2-m>0.00</z2-m>
         </axis>
     </animation>
     <animation>
