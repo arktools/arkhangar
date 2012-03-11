@@ -44,9 +44,9 @@
     
     <mass_balance>
         <!--these need to be checked, not important for trim-->
-        <ixx unit="SLUG*FT2"> 430.6 </ixx>
-        <iyy unit="SLUG*FT2"> 417.9 </iyy>
-        <izz unit="SLUG*FT2"> 867.4 </izz>
+        <ixx unit="SLUG*FT2"> 167.93 </ixx>
+        <iyy unit="SLUG*FT2"> 209.46 </iyy>
+        <izz unit="SLUG*FT2"> 375.94 </izz>
         <ixz unit="SLUG*FT2"> 0 </ixz>
         <emptywt unit="LBS"> 333.0 </emptywt>
         <!-- the center of gravity -->
@@ -201,7 +201,8 @@
     </ground_reactions>
 
     <propulsion>
-        <engine file="UEL-741AR74-1102">
+        <engine file="UEL-741AR74-1102cale name="Elevator Control">
+                <input>fcs/pitch-trim">
             <location unit="FT">
                 <x> 5.285 </x>
                 <y> 0 </y>
@@ -213,7 +214,8 @@
                 <yaw> 0.0 </yaw>
             </orient>
             <feed>0</feed>
-            <thruster file="prop">
+            <thruster file="prop">cale name="Elevator Control">
+                <input>fcs/pitch-trim
                 <location unit="FT">
                     <x> 5.285 </x>
                     <y> 0.0 </y>
@@ -231,7 +233,8 @@
             <location unit="FT">
                 <x> 3.0 </x>
                 <y> 0.0 </y>
-                <z> 0.305 </z>
+                <z> 0.305 </z>cale name="Elevator Control">
+                <input>fcs/pitch-trim
             </location>
             <capacity unit="LBS"> 74 </capacity>
             <contents unit="LBS"> 74 </contents>
@@ -240,7 +243,8 @@
 
     <!--
       E = 1.3 * Mixture * P_std / P_amb
-  
+  cale name="Elevator Control">
+                <input>fcs/pitch-trim
       Mixture = (P_amb / P_std) / 1.3
       -->
     <system name="Mixture control">

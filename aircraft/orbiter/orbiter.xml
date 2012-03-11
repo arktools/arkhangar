@@ -93,8 +93,8 @@
 			</location>
 			<static_friction> 1.0 </static_friction>
 			<dynamic_friction> 0.8 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 12 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 410 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 10 </damping_coeff>
 		</contact>
 		<contact type="STRUCTURE" name="NOSE">
 			<location unit="IN">
@@ -104,8 +104,8 @@
 			</location>
 			<static_friction> 1.0 </static_friction>
 			<dynamic_friction> 0.8 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 12 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 410 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 10 </damping_coeff>
 		</contact>
 		<contact type="STRUCTURE" name="BOTTOM_CANOPY">
 			<location unit="IN">
@@ -115,8 +115,8 @@
 			</location>
 			<static_friction> 1.0 </static_friction>
 			<dynamic_friction> 0.8 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 12 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 410 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 10 </damping_coeff>
 		</contact>
 
 		<contact type="STRUCTURE" name="LEFT_WING">
@@ -127,8 +127,8 @@
 			</location>
 			<static_friction> 1.0 </static_friction>
 			<dynamic_friction> 0.8 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 12 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 410 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 10 </damping_coeff>
 		</contact>
 		<contact type="STRUCTURE" name="RIGHT_WING">
 			<location unit="IN">
@@ -138,8 +138,8 @@
 			</location>
 			<static_friction> 1.0 </static_friction>
 			<dynamic_friction> 0.8 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 12 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 410 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 10 </damping_coeff>
 		</contact>
 		<!--contact type="STRUCTURE" name="VERTICAL_TAIL">
 			<location unit="IN">
@@ -149,7 +149,7 @@
 			</location>
 			<static_friction> 1.0 </static_friction>
 			<dynamic_friction> 0.8 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 12 </spring_coeff>
+			<spring_coeff unit="LBS/FT"> 410 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 1 </damping_coeff>
 		</contact-->
 		<contact type="STRUCTURE" name="CABIN_TOP">
@@ -160,8 +160,8 @@
 			</location>
 			<static_friction> 1.0 </static_friction>
 			<dynamic_friction> 0.8 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 12 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 1 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 410 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 10 </damping_coeff>
 		</contact>
     </ground_reactions>
     <!-- **********************************************************************
@@ -222,16 +222,80 @@
                 </clipto>
                 <output>fcs/elevator-pos-norm</output>
             </summer>
-            <aerosurface_scale name="Elevator Control">
-                <input>fcs/pitch-trim-sum</input>
-                <gain>0.01745</gain>
-                <range>
-                    <min>-28</min>
-                    <max>23</max>
-                </range>
-                <output>fcs/elevator-pos-rad</output>
-            </aerosurface_scale>
         </channel>
+
+        <!--       
+            Aileron
+        -->
+        <channel name="Roll">
+
+            <!--left aileron-->
+            <pure_gain name="Left Aileron Elevator Mix">
+                <input>fcs/elevator-pos-norm</input>
+                <gain>1</gain>
+            </pure_gain>
+            <summer name="Left Roll Trim Sum">
+                <input>fcs/aileron-cmd-norm</input>
+                <input>fcs/roll-trim-cmd-norm</input>
+                <input>fcs/left-aileron-elevator-mix</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+            <lag_filter name="Left Aileron Position Norm">
+                <input>fcs/left-roll-trim-sum</input>
+                <c1>125</c1>
+                <output>fcs/left-aileron-pos-norm</output>
+            </lag_filter>
+            <aerosurface_scale name="Left Aileron Position Deg">
+                <input>fcs/left-aileron-pos-norm</input>
+                <range>
+                    <min>-20</min>
+                    <max>20</max>
+                </range>
+                <output>fcs/left-aileron-pos-deg</output>
+            </aerosurface_scale>
+            <pure_gain name="Left Aileron Surface Position">
+                <input>fcs/left-aileron-pos-deg</input>
+                <gain>1</gain>
+                <output>/surface-positions/left-aileron-pos-deg</output>
+            </pure_gain>
+
+            <!--right aileron-->
+            <pure_gain name="Right Aileron Elevator Mix">
+                <input>fcs/elevator-pos-norm</input>
+                <gain>-1</gain>
+            </pure_gain>
+           <summer name="Right Roll Trim Sum">
+                <input>fcs/aileron-cmd-norm</input>
+                <input>fcs/roll-trim-cmd-norm</input>
+                <input>fcs/right-aileron-elevator-mix</input>
+                <clipto>
+                    <min>-1</min>
+                    <max>1</max>
+                </clipto>
+            </summer>
+            <lag_filter name="Right Aileron Position Norm">
+                <input>fcs/right-roll-trim-sum</input>
+                <c1>125</c1>
+                <output>fcs/right-aileron-pos-norm</output>
+            </lag_filter> 
+            <aerosurface_scale name="Right Aileron Position Deg">
+                <input>fcs/right-aileron-pos-norm</input>
+                <range>
+                    <min>-20</min>
+                    <max>20</max>
+                </range>
+                <output>fcs/right-aileron-pos-deg</output>
+            </aerosurface_scale>
+            <pure_gain name="Right Aileron Surface Position">
+                <input>fcs/right-aileron-pos-deg</input>
+                <gain>1</gain>
+                <output>/surface-positions/right-aileron-pos-deg</output>
+            </pure_gain>
+        </channel>
+
  		<!--
             Rudder
         -->

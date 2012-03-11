@@ -5,40 +5,40 @@
     <path>orbiter.ac</path>
     <offsets>
         <z-m>0.0</z-m>
-        <y-m>0</y-m>
+        <y-m>0.0</y-m>
         <x-m>0.0</x-m>
         <pitch-deg>0</pitch-deg>
     </offsets>
 	<!--Ailerons-->
-    <!--animation>
+    <animation>
         <type>rotate</type>
         <object-name>leftAileron</object-name>
-        <property>/surface-positions/aileron-pos-deg</property>
+        <property>/surface-positions/left-aileron-pos-deg</property>
 		<axis>
-	    <x1-m>1.372</x1-m>
-            <y1-m>-3.018</y1-m>
-            <z1-m>0.161</z1-m>
-            <x2-m>1.372</x2-m>
-            <y2-m>-2.362</y2-m>
-            <z2-m>0.163</z2-m>
+	        <x1-m>1.076</x1-m>
+            <y1-m>-0.920</y1-m>
+            <z1-m>-0.021</z1-m>
+            <x2-m>0.850</x2-m>
+            <y2-m>-0.531</y2-m>
+            <z2-m>-0.009</z2-m>
         </axis>
 	</animation>
 
     <animation>
         <type>rotate</type>
-        <object-name>leftAileron.002</object-name>
-        <property>/surface-positions/aileron-pos-deg</property>
+        <object-name>rightAileron</object-name>
+        <property>/surface-positions/right-aileron-pos-deg</property>
 		<axis>
-	    <x1-m>1.372</x1-m>
-            <y1-m>3.018</y1-m>
-            <z1-m>0.161</z1-m>
-            <x2-m>1.372</x2-m>
-            <y2-m>2.362</y2-m>
-            <z2-m>0.163</z2-m>
+            <x1-m>1.076</x1-m>
+            <y1-m>0.920</y1-m>
+            <z1-m>-0.021</z1-m>
+            <x2-m>0.850</x2-m>
+            <y2-m>0.531</y2-m>
+            <z2-m>-0.009</z2-m>
         </axis>
-    </animation-->     
+    </animation>     
 	<!--Propeller-->
-    <!--animation>
+    <animation>
         <type>noshadow</type>
         <object-name>prop</object-name>
     </animation>
@@ -64,5 +64,5 @@
                 <value>1100</value>
             </less-than>
         </condition>
-    </animation-->
+    </animation>
 </PropertyList>
