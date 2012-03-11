@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- HB2815-2000 -->
+
+<electric_engine name="orbiter_electric">
+  <power unit="WATTS">  2072 </power>
+</electric_engine>
+

@@ -60,11 +60,11 @@
         MASS_BALANCE
         ********************************************************************** -->
     <mass_balance>
-	<ixx unit="SLUG*FT2"> 6.476 </ixx>  <!--unchanged-->
-        <iyy unit="SLUG*FT2"> 7.927 </iyy>
-        <izz unit="SLUG*FT2"> 15.942 </izz>
+	<ixx unit="SLUG*FT2"> 7.30 </ixx>  <!--unchanged-->
+        <iyy unit="SLUG*FT2"> 8.94 </iyy>
+        <izz unit="SLUG*FT2"> 17.96 </izz>
 	<ixz unit="SLUG*FT2"> 0 </ixz>
-        <emptywt unit="LBS"> 12.125 </emptywt>
+        <emptywt unit="LBS"> 13.67 </emptywt>
         <!-- the center of gravity -->
         <location name="CG" unit="IN">
             <!--<x> 11.44 </x>-->
@@ -168,7 +168,7 @@
         PROPULSION
         ********************************************************************** -->
     <propulsion>
-        <engine file="HB2815-2000">
+        <engine file="orbiter-electric">
             <location unit="IN">
                 <x> 33.4 </x>
                 <y> 0 </y>
@@ -180,7 +180,7 @@
                 <yaw> 0.0 </yaw>
             </orient>
 		<feed>0</feed>
-		<thruster file="apc6x4">
+		<thruster file="orbiter-prop">
                 <location unit="IN">
                     <x> 33.4 </x>
                     <y> 0 </y>
