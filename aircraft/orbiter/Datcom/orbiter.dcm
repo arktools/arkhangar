@@ -604,17 +604,7 @@ SAVE
          DELTAL(1)=-28.0, -20.0, -10.0, -5.0, 0.0,  5.0,  10.0,  20.0,  28.0,
          DELTAR(1)= 28.0,  20.0,  10.0,  5.0, 0.0, -5.0, -10.0, -20.0, -28.0,
          SPANFI=20.9, SPANFO=36.2,
-         PHETE=0.05228, CHRDFI=2.55, CHRDFO=2.55$
-
-
-* $ASYFLP STYPE=4.0, NDELTA=9.0,
-*         DELTAL(1)=-32.0,-20.0,-10.0,-5.0,0.0,5.0,10.0,20.0,32.0,
-*         DELTAR(1)=32.0,20.0,10.0,5.0,0.0,-5.0,-10.0,-20.0,-32.0,
-*         SPANFI=15.2, SPANFO=24.0,
-*         PHETE=0.05228,
-*         CHRDFI=1.87, CHRDFO=1.2$
-
-
+         PHETE=0.0, CHRDFI=2.55, CHRDFO=2.55$
 
 *   Terminates the reading of input cards and begins execution of
 *   the case. Case data are destroyed following execution of a case,
@@ -804,13 +794,11 @@ SAVE
 *   EFFJET  EBF Effective jet deflection angle
 *           (NDELTA values in array)
 
-* $SYMFLP FTYPE=1.0,
-*         NDELTA=9.0, DELTA(1)=-20.0,-15.0,-10.0,-5.0,0.0,5.0,10.0,13.0,16.0,
-*         PHETE=0.0522, PHETEP=0.0523,
-*        CHRDFI=1.25,  CHRDFO=1.00,
-*         SPANFI=0.0,   SPANFO=6.25,
-*         CB=0.84,      TC=0.3,         NTYPE=1.0$
-
+ $SYMFLP FTYPE=1.0,
+         NDELTA=9.0,
+         DELTA(1)=-28.0, -20.0, -10.0, -5.0, 0.0,  5.0,  10.0,  20.0,  28.0,
+         SPANFI=20.9, SPANFO=36.2,
+         PHETE=0.0, CHRDFI=2.55, CHRDFO=2.55$
 
 
 **************************************

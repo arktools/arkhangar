@@ -60,20 +60,21 @@
         MASS_BALANCE
         ********************************************************************** -->
     <mass_balance>
-	<ixx unit="SLUG*FT2"> 7.30 </ixx>  <!--unchanged-->
+        <!--doubled x inertia-->
+        <ixx unit="SLUG*FT2"> 7.30 </ixx>
         <iyy unit="SLUG*FT2"> 8.94 </iyy>
         <izz unit="SLUG*FT2"> 17.96 </izz>
-	<ixz unit="SLUG*FT2"> 0 </ixz>
+        <ixz unit="SLUG*FT2"> 0 </ixz>
         <emptywt unit="LBS"> 13.67 </emptywt>
         <!-- the center of gravity -->
         <location name="CG" unit="IN">
-            <!--<x> 11.44 </x>-->
-            <x> 3.6 </x>
+            <x> 11.44 </x>
+            <!--<x> 7.0 </x>-->
             <y> 0.0 </y>
             <z> 0.0 </z>
         </location>
         <pointmass name="PAYLOAD">
-          <weight unit="LBS"> 0.0 </weight>
+          <weight unit="LBS"> 2.866 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 11.44 </x>
                 <y> 0.0 </y>
@@ -222,6 +223,16 @@
                 </clipto>
                 <output>fcs/elevator-pos-norm</output>
             </summer>
+
+            <aerosurface_scale name="Elevator Position Deg">
+                <input>fcs/elevator-pos-norm</input>
+                <range>
+                    <min>-20</min>
+                    <max>20</max>
+                </range>
+                <output>fcs/elevator-pos-deg</output>
+            </aerosurface_scale>
+
         </channel>
 
         <!--       
@@ -229,20 +240,20 @@
         -->
         <channel name="Roll">
 
-            <!--left aileron-->
-            <pure_gain name="Left Aileron Elevator Mix">
-                <input>fcs/elevator-pos-norm</input>
-                <gain>1</gain>
-            </pure_gain>
-            <summer name="Left Roll Trim Sum">
+            <summer name="Roll Trim Sum">
                 <input>fcs/aileron-cmd-norm</input>
                 <input>fcs/roll-trim-cmd-norm</input>
-                <input>fcs/left-aileron-elevator-mix</input>
                 <clipto>
                     <min>-1</min>
                     <max>1</max>
                 </clipto>
             </summer>
+
+            <!--left aileron-->
+            <pure_gain name="Left Roll Trim Sum">
+                <input>fcs/roll-trim-sum</input>
+                <gain>1</gain>
+            </pure_gain>
             <lag_filter name="Left Aileron Position Norm">
                 <input>fcs/left-roll-trim-sum</input>
                 <c1>125</c1>
@@ -251,31 +262,30 @@
             <aerosurface_scale name="Left Aileron Position Deg">
                 <input>fcs/left-aileron-pos-norm</input>
                 <range>
-                    <min>-20</min>
-                    <max>20</max>
+                    <min>-10</min>
+                    <max>10</max>
                 </range>
                 <output>fcs/left-aileron-pos-deg</output>
             </aerosurface_scale>
-            <pure_gain name="Left Aileron Surface Position">
+            <pure_gain name="Left Aileron Elevator Mix">
+                <input>fcs/elevator-pos-deg</input>
+                <gain>1</gain>
+            </pure_gain>
+            <summer name="Left Aileron Sum Deg">
+                <input>fcs/left-aileron-elevator-mix</input>
                 <input>fcs/left-aileron-pos-deg</input>
+            </summer>
+            <pure_gain name="Left Aileron Surface Position">
+                <input>fcs/left-aileron-sum-deg</input>
                 <gain>1</gain>
                 <output>/surface-positions/left-aileron-pos-deg</output>
             </pure_gain>
 
             <!--right aileron-->
-            <pure_gain name="Right Aileron Elevator Mix">
-                <input>fcs/elevator-pos-norm</input>
+            <pure_gain name="Right Roll Trim Sum">
+                <input>fcs/roll-trim-sum</input>
                 <gain>-1</gain>
             </pure_gain>
-           <summer name="Right Roll Trim Sum">
-                <input>fcs/aileron-cmd-norm</input>
-                <input>fcs/roll-trim-cmd-norm</input>
-                <input>fcs/right-aileron-elevator-mix</input>
-                <clipto>
-                    <min>-1</min>
-                    <max>1</max>
-                </clipto>
-            </summer>
             <lag_filter name="Right Aileron Position Norm">
                 <input>fcs/right-roll-trim-sum</input>
                 <c1>125</c1>
@@ -284,53 +294,26 @@
             <aerosurface_scale name="Right Aileron Position Deg">
                 <input>fcs/right-aileron-pos-norm</input>
                 <range>
-                    <min>-20</min>
-                    <max>20</max>
+                    <min>-10</min>
+                    <max>10</max>
                 </range>
                 <output>fcs/right-aileron-pos-deg</output>
             </aerosurface_scale>
-            <pure_gain name="Right Aileron Surface Position">
-                <input>fcs/right-aileron-pos-deg</input>
+            <pure_gain name="Right Aileron Elevator Mix">
+                <input>fcs/elevator-pos-deg</input>
                 <gain>1</gain>
+            </pure_gain>
+            <summer name="Right Aileron Sum Deg">
+                <input>fcs/right-aileron-elevator-mix</input>
+                <input>fcs/right-aileron-pos-deg</input>
+            </summer>
+            <pure_gain name="Right Aileron Surface Position">
+                <input>fcs/right-aileron-sum-deg</input>
+                <gain>-1</gain>
                 <output>/surface-positions/right-aileron-pos-deg</output>
             </pure_gain>
         </channel>
 
- 		<!--
-            Rudder
-        -->
-        <channel name="Yaw">
-            <summer name="Yaw Trim Sum">
-                <input>fcs/rudder-cmd-norm</input>
-                <input>fcs/yaw-trim-cmd-norm</input>
-                <clipto>
-                    <min>-1</min>
-                    <max>1</max>
-                </clipto>
-            </summer>
-			<!--<pure_gain name="Aileron Crossfeed">-->
-                <!--<input>fcs/aileron-cmd-norm</input>-->
-				<!--<gain>-1</gain>-->
-				<!--<output>fcs/rudder-pos-norm</output>-->
-            <!--</pure_gain>-->
-			<summer name="Yaw Mix">
-                <input>fcs/yaw-trim-sum</input>
-				<!--<input>fcs/aileron-crossfeed</input>-->
-                <clipto>
-                    <min>-1</min>
-                    <max>1</max>
-                </clipto>
-            </summer>
-            <aerosurface_scale name="Rudder Control">
-                <input>fcs/yaw-mix</input>
-                <gain>0.01745</gain>
-                <range>
-                    <min>-27</min>
-                    <max>27</max>
-                </range>
-                <output>fcs/rudder-pos-rad</output>
-			</aerosurface_scale>
-		</channel>
 		<!--
             Throttle (linear vs rpm approx.)
         -->

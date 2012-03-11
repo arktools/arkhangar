@@ -10,5 +10,4 @@ graph:
 
 dcm:
 	datcom orbiter.dcm
-	sed -i -e "1018s:$$:\n                  <independentVar lookup=\"column\">fcs/left-aileron-pos-deg</independentVar>:g" orbiter_aero.xml
-	sed -i -e "372,408d" orbiter_aero.xml
+	#sed -i -e "1018s:$$:\n                  <independentVar lookup=\"column\">fcs/left-aileron-pos-deg</independentVar>:g" orbiter_aero.xml
