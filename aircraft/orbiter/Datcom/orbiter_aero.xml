@@ -305,7 +305,7 @@
                <property>aero/qbar-psf</property>
                <property>metrics/Sw-sqft</property>
                <table>
-                  <independentVar lookup="row">fcs/left-aileron-pos-deg</independentVar>
+                  <independentVar lookup="row">fcs/flap-pos-deg</independentVar>
                   <tableData>
                        -28.00        -.1069    
                        -20.00        -.9681E-01
@@ -331,7 +331,7 @@
                <property>aero/qbar-psf</property>
                <property>metrics/Sw-sqft</property>
                <table>
-                  <independentVar lookup="row">fcs/right-aileron-pos-deg</independentVar>
+                  <independentVar lookup="row">fcs/flap-pos-deg</independentVar>
                   <tableData>
                        -28.00        -.1069    
                        -20.00        -.9681E-01
@@ -432,7 +432,7 @@
                <property>metrics/Sw-sqft</property>
                <table>
                   <independentVar lookup="row">aero/alpha-deg</independentVar>
-                  <independentVar lookup="column">fcs/left-aileron-pos-deg</independentVar>
+                  <independentVar lookup="column">fcs/flap-pos-deg</independentVar>
                   <tableData>
                                      -28.00        -20.00        -10.00        -5.000          .000         5.000         10.00         20.00         28.00    
                        -16.00         .1448E-01     .1275E-01     .6986E-02     .3176E-02      .000        -.2542E-02    -.4451E-02    -.5964E-02    -.6197E-02
@@ -471,7 +471,7 @@
                <property>metrics/Sw-sqft</property>
                <table>
                   <independentVar lookup="row">aero/alpha-deg</independentVar>
-                  <independentVar lookup="column">fcs/right-aileron-pos-deg</independentVar>
+                  <independentVar lookup="column">fcs/flap-pos-deg</independentVar>
                   <tableData>
                                      -28.00        -20.00        -10.00        -5.000          .000         5.000         10.00         20.00         28.00    
                        -16.00         .1448E-01     .1275E-01     .6986E-02     .3176E-02      .000        -.2542E-02    -.4451E-02    -.5964E-02    -.6197E-02
@@ -816,10 +816,10 @@
                times distance from centerline to MAC of surface.
             </description>
             <product>
-               <value>      2.379</value>
+               <value>      2.06</value>
                <difference>
-                  <property>aero/coefficient/CLdF1L</property>
                   <property>aero/coefficient/CLdF1R</property>
+                  <property>aero/coefficient/CLdF1L</property>
                </difference>
             </product>
          </function>
@@ -1008,7 +1008,7 @@
                <property>metrics/Sw-sqft</property>
                <property>metrics/cbarw-ft</property>
                <table>
-                  <independentVar lookup="row">fcs/left-aileron-pos-deg</independentVar>
+                  <independentVar lookup="row">fcs/flap-pos-deg</independentVar>
                   <tableData>
                        -28.00         .1471    
                        -20.00         .1326    
@@ -1035,7 +1035,7 @@
                <property>metrics/Sw-sqft</property>
                <property>metrics/cbarw-ft</property>
                <table>
-                  <independentVar lookup="row">fcs/right-aileron-pos-deg</independentVar>
+                  <independentVar lookup="row">fcs/flap-pos-deg</independentVar>
                   <tableData>
                        -28.00         .1471    
                        -20.00         .1326    
@@ -1073,32 +1073,31 @@
                <property>metrics/Sw-sqft</property>
                <property>metrics/bw-ft</property>
                <property>aero/beta-deg</property>
-               <value>0.001</value>
-               <!--<table>-->
-                  <!--<independentVar lookup="row">aero/alpha-deg</independentVar>-->
-                  <!--<tableData>-->
-                       <!---16.00        -.3006E-04-->
-                       <!---8.000        -.3006E-04-->
-                       <!---6.000        -.3006E-04-->
-                       <!---4.000        -.3006E-04-->
-                       <!---2.000        -.3006E-04-->
-                         <!--.000        -.3006E-04-->
-                        <!--2.000        -.3006E-04-->
-                        <!--4.000        -.3006E-04-->
-                        <!--8.000        -.3006E-04-->
-                        <!--9.000        -.3006E-04-->
-                        <!--10.00        -.3006E-04-->
-                        <!--12.00        -.3006E-04-->
-                        <!--14.00        -.3006E-04-->
-                        <!--16.00        -.3006E-04-->
-                        <!--18.00        -.3006E-04-->
-                        <!--19.00        -.3006E-04-->
-                        <!--20.00        -.3006E-04-->
-                        <!--21.00        -.3006E-04-->
-                        <!--22.00        -.3006E-04-->
-                        <!--24.00        -.3006E-04-->
-                  <!--</tableData>-->
-               <!--</table>-->
+               <table>
+                  <independentVar lookup="row">aero/alpha-deg</independentVar>
+                  <tableData>
+                       -16.00        -.3006E-04
+                       -8.000        -.3006E-04
+                       -6.000        -.3006E-04
+                       -4.000        -.3006E-04
+                       -2.000        -.3006E-04
+                         .000        -.3006E-04
+                        2.000        -.3006E-04
+                        4.000        -.3006E-04
+                        8.000        -.3006E-04
+                        9.000        -.3006E-04
+                        10.00        -.3006E-04
+                        12.00        -.3006E-04
+                        14.00        -.3006E-04
+                        16.00        -.3006E-04
+                        18.00        -.3006E-04
+                        19.00        -.3006E-04
+                        20.00        -.3006E-04
+                        21.00        -.3006E-04
+                        22.00        -.3006E-04
+                        24.00        -.3006E-04
+                  </tableData>
+               </table>
             </product>
          </function>
 
@@ -1188,10 +1187,10 @@
                times distance from centerline to MAC of surface.
             </description>
             <product>
-               <value>      2.379</value>
+               <value>      2.06</value>
                <difference>
-                  <property>aero/coefficient/CdDf1L</property>
                   <property>aero/coefficient/CdDf1R</property>
+                  <property>aero/coefficient/CdDf1L</property>
                </difference>
             </product>
          </function>
