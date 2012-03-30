@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PropertyList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../XMLSchemas/PropertyList.xsd">
+    <sim>
+        <author>James Goppert</author>
+		<description>SM-3 Missile</description>
+        <aircraft-version>0.0.0</aircraft-version>
+        <status>early-production</status>
+        <startup>
+            <splash-title>SM-3 Missile</splash-title>
+			<splash-texture>Aircraft/sm-3/sm-3.rgb</splash-texture>
+        </startup>
+        <model>
+            <path>Aircraft/sm-3/Models/sm-3-model.xml</path>
+        </model>
+        <sound>
+            <path>Aircraft/sm-3/sm-3-sound.xml</path>
+        </sound>
+		<flight-model>jsb</flight-model>
+        <aero>X15</aero>
+        <!--<aero>sm-3</aero>-->
+    </sim>
+</PropertyList>

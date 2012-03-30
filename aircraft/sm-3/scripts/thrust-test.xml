@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://jsbsim.sf.net/JSBSimScript.xsl"?>
+<runscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://jsbsim.sf.net/JSBSimScript.xsd"
+    name="SM-3">
+  <description>Testing the SM-3</description>
+  <use aircraft="sm-3" initialize="reset01"/>
+  <run start="0.0" end="10.0" dt="0.01">
+
+    <property value="0"> simulation/notify-time-trigger </property>
+
+    <event name="Set controls">
+      <condition>simulation/sim-time-sec  ge  0.0</condition>
+      <set name="fcs/elevator-cmd-norm" action="FG_STEP" type="FG_VALUE" value="-1.0" tc="0.5"/>
+      <set name="fcs/throttle-cmd-norm" value="1.0"/>
+      <notify/>
+    </event>
+
+    <event name="Repeating Notify" persistent="true">
+      <description>Output message at 1 second intervals</description>
+      <notify>
+        <property>propulsion/engine[0]/thrust-lbs</property>
+        <property>fcs/throttle-cmd-norm[0]</property>
+        <property>fcs/throttle-pos-norm[0]</property>
+      </notify>
+      <condition> simulation/sim-time-sec >= simulation/notify-time-trigger </condition>
+      <set name="simulation/notify-time-trigger" value="1" type="FG_DELTA"/>
+    </event>
+
+  </run>
+</runscript>

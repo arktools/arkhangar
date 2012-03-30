@@ -1,0 +1,5 @@
+build
+*.swp
+.nfs*
+*.blend1
+initfile.xml

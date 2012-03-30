@@ -1,0 +1,42 @@
+project (arkhangar)
+
+# Requried cmake version
+cmake_minimum_required (VERSION 2.8.2)
+set(PROJECT_VERSION_MAJOR "1")
+set(PROJECT_VERSION_MINOR "3")
+set(PROJECT_VERSION_PATCH "0")
+set(PROJECT_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
+set(PROJECT_CONTACT_EMAIL james.goppert@gmail.com)
+set(PROJECT_CONTACT_VENDOR arkTools)
+set(LIBRARY_VERSION ${PROJECT_VERSION})
+set(LIBRARY_SOVERSION "0.0.0")
+
+# config files
+configure_file(config.h.in config.h)
+install(FILES ${CMAKE_BINARY_DIR}/config.h DESTINATION share/${PROJECT_NAME} COMPONENT Runtime)
+
+# install files
+install(DIRECTORY aircraft/ DESTINATION share/${PROJECT_NAME}/aircraft)
+install(DIRECTORY analysis/ DESTINATION share/${PROJECT_NAME}/analysis)
+install(DIRECTORY scripts/ DESTINATION share/${PROJECT_NAME}/scripts)
+
+### packaging
+
+# add file extensions and set resource files
+configure_file("COPYING" "COPYING.txt" COPYONLY)
+configure_file("README" "README.txt" COPYONLY)
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_BINARY_DIR}/COPYING.txt")
+set(CPACK_RESOURCE_FILE_README "${CMAKE_BINARY_DIR}/README.txt")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "${CPACK_RESOURCE_FILE_README}")
+set(CPACK_RESOURCE_FILE_WELCOME "${CMAKE_SOURCE_DIR}/cmake/WELCOME.txt")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "arktools aircraft hangar")
+set(CPACK_PACKAGE_VENDOR ${PROJECT_CONTACT_VENDOR})
+set(CPACK_PACKAGE_CONTACT "${PROJECT_CONTACT_EMAIL}")
+set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
+set(CPACK_SET_DESTDIR TRUE)
+set(CPACK_COMPONENTS_GROUPING "ALL_COMPONENTS_IN_ONE")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "")
+set(CPACK_PACKAGE_EXECUTABLES "")
+include(CPack)
+
+# vim:sw=4:ts=4:expandtab
