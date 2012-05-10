@@ -134,7 +134,7 @@ DUMP IOM
 
 
  $FLTCON WT=2.0, LOOP=1.0,
-* 		 around 40 km/h cruise speed
+*        around 40 km/h cruise speed
          NMACH=1.0, MACH(1)=0.03635,
          NALT=1.0, ALT(1)=0.0,
          NALPHA=20.0, 
@@ -246,11 +246,11 @@ DUMP IOM
 *           2.0 = Use Jorgensen method
 
  $BODY   NX=12.0,
-	X(1) =0.0, 0.5,  2.0,  5.0,   6.0,   8.0,  12.0,  18.0, 19.0, 20.0, 32.0, 33.0,
-	R(1) =0.0, 0.44, 1.25, 1.63,  1.44,  1.63, 1.38,  1.13, 1.0,  1.0,  0.5,  0.0,
-	ZU(1)=0.0, 1.5,  2.25, 3.25,  3.25,  3.25, 3.75,  4.63, 0.7,  0.6,  0.5,  0.0,
-	ZL(1)=0.0, 0.0,  -0.5, -1.23, -1.23, -1.8, -1.25, -1.0, -0.7, -0.6, -0.5, 0.0,
-	ITYPE=1.0, METHOD=1.0$
+    X(1) =0.0, 0.5,  2.0,  5.0,   6.0,   8.0,  12.0,  18.0, 19.0, 20.0, 32.0, 33.0,
+    R(1) =0.0, 0.44, 1.25, 1.63,  1.44,  1.63, 1.38,  1.13, 1.0,  1.0,  0.5,  0.0,
+    ZU(1)=0.0, 1.5,  2.25, 3.25,  3.25,  3.25, 3.75,  4.63, 0.7,  0.6,  0.5,  0.0,
+    ZL(1)=0.0, 0.0,  -0.5, -1.23, -1.23, -1.8, -1.25, -1.0, -0.7, -0.6, -0.5, 0.0,
+    ITYPE=1.0, METHOD=1.0$
 
 
 **********************************
@@ -280,7 +280,7 @@ DUMP IOM
 *NOTE: The wave-drag factors for the sharp nose airfoils?
 
  $WGPLNF CHRDTP=1.0,SSPNE=24.0,SSPNOP=6.0, SSPN=27.0,
-	CHRDBP=7.0,CHRDR=7.8, SAVSI=6.0,SAVSO=60.0, SSPNDD=4.0, TWISTA=0.0,
+    CHRDBP=7.0,CHRDR=7.8, SAVSI=6.0,SAVSO=60.0, SSPNDD=4.0, TWISTA=0.0,
     CHSTAT=0.0, DHDADI=0.0, DHDADO=20.9, TYPE=1.0$
 
 **********************************************
@@ -668,8 +668,8 @@ NACA H 4 0009
 *           Only required for supersonic and hypersonic speed regimes.
 
  $HTPLNF CHRDTP=1.5, SSPNOP=3.0, SSPNE=8.75, SSPN=9.25, 
-	CHRDBP=3.75, CHRDR=4.0, SAVSI=0.0, SAVSO=49.4, TWISTA=0.0,
-	CHSTAT=0.0, TYPE=1.0$
+    CHRDBP=3.75, CHRDR=4.0, SAVSI=0.0, SAVSO=49.4, TWISTA=0.0,
+    CHSTAT=0.0, TYPE=1.0$
 
 
 ******************************************
@@ -701,7 +701,7 @@ NACA H 4 0009
 *           Only required for supersonic and hypersonic speed regimes.
 
  $VTPLNF CHRDTP=1.0, SSPNE=6.5, SSPN=7.25, 
-	CHRDR=4.63, SAVSI=30.0, CHSTAT=0.0, TYPE=1.0$
+    CHRDR=4.63, SAVSI=30.0, CHSTAT=0.0, TYPE=1.0$
 
 
 ******************************************
@@ -737,8 +737,8 @@ NACA H 4 0009
 
 * no vertical fin
 * $VFPLNF CHRDTP=1.0, SSPNOP=2.5, SSPNE=6.5, SSPN=7.25, 
-*	CHRDBP=3.0, CHRDR=4.63, SAVSI=30.0, SAVSO=70.0,
-*	CHSTAT=0.0, TYPE=1.0$
+*   CHRDBP=3.0, CHRDR=4.63, SAVSI=30.0, SAVSO=70.0,
+*   CHSTAT=0.0, TYPE=1.0$
 
 
 ***********************************
@@ -900,9 +900,9 @@ NACA V 4 0009
 *   YP      Lateral location of engine
 *   CROT    True if counter rotating, false if non counter rotating
  $PROPWR AIETLP=-5.19, NENGSP=1.0, THSTCP=0.0,
-	PHALOC=19.0, PHVLOC=4.0, PRPRAD=2.69,
-	BWAPR3=0.5, BWAPR6=0.38, BWAPR9=0.25, BAPR75=26.7,
-	NOPBPE=1.0, YP=0.0, CROT=.FALSE.$
+    PHALOC=19.0, PHVLOC=4.0, PRPRAD=2.69,
+    BWAPR3=0.5, BWAPR6=0.38, BWAPR9=0.25, BAPR75=26.7,
+    NOPBPE=1.0, YP=0.0, CROT=.FALSE.$
 
 *********************************
 *    Jet Power Effects parameters  pg 51
