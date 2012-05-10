@@ -5,3 +5,4 @@
 *.dat
 *.out
 *.jiff
+!*_aero.xml
