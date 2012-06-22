@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<PropertyList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../XMLSchemas/PropertyList.xsd">
+    <sim>
+        <author>James Goppert</author>
+        <description>%TEMPLATE% (DATCOM aerodynamics)</description>
+        <aircraft-version>0.0.0</aircraft-version>
+        <status>early-production</status>
+        <startup>
+            <splash-title>%TEMPLATE%</splash-title>
+            <splash-texture>Aircraft/%TEMPLATE%/Models/splash.rgb</splash-texture>
+        </startup>
+        <model>
+            <path>Aircraft/%TEMPLATE%/Models/model.xml</path>
+        </model>
+        <sound>
+            <path>Aircraft/%TEMPLATE%/Systems/sound.xml</path>
+        </sound>
+        <flight-model>jsb</flight-model>
+        <aero>%TEMPLATE%</aero>
+        
+        <menubar>
+            <default>
+                <menu n="10">
+                    <label>scripts</label>
+                    <enabled type="bool">true</enabled>
+                    <item>
+                        <label>Autostart/stop</label>
+                        <binding>
+                            <command>property-toggle</command>
+                            <property>sim/model/start-idling</property>
+                        </binding>
+                    </item>
+                </menu>
+            </default>
+        </menubar>
+        
+        
+    </sim>
+    
+    <input>
+        <keyboard>
+            <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.ap_settings.toggle()</script>
+                </binding>
+            </key>
+            <key n="71">
+                <name>G</name>
+                <desc>Gear down.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.gear_toggle(1)</script>
+                </binding>
+            </key>
+            <key n="103">
+                <name>g</name>
+                <desc>Gear Up.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>systems.gear_toggle(-1)</script>
+                </binding>
+            </key>
+            <key n="77">
+                <name>M</name>
+                <desc>Condition leaner</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <step>-0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <step>-0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+            </key>
+            <key n="109">
+                <name>m</name>
+                <desc>Condition richer</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <step>0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <step>0.01</step>
+                    <min>0</min>
+                    <max>1</max>
+                    <wrap>0</wrap>
+                </binding>
+            </key>
+        </keyboard>
+    </input>
+    
+    <nasal>
+        <systems>
+            <file>Aircraft/%TEMPLATE%/Nasal/systems.nas</file>
+        </systems>
+    </nasal>
+    
+</PropertyList>

@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
+<fdm_config name="%TEMPLATE%" version="2.0" release="BETA"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
+    
+    <fileheader>
+        <author> Purdue Hybrid Systems Lab</author>
+        <filecreationdate> 2012-3-24 </filecreationdate>
+        <version> 0.0.0 </version>
+        <description> %TEMPLATE% </description>
+    </fileheader>
+    
+    <metrics>
+        <wingarea unit="FT2"> 200.0 </wingarea>
+        <wingspan unit="FT"> 45.20 </wingspan>
+        <chord unit="FT"> 4.42 </chord>
+        <htailarea unit="FT2"> 32.0 </htailarea>
+        <htailarm unit="FT"> 17.50 </htailarm>
+        <vtailarea unit="FT2"> 36.0 </vtailarea>
+        <vtailarm unit="FT"> 17.50 </vtailarm>
+        <location name="AERORP" unit="IN">
+            <x> 211.8 </x>
+            <y> 0 </y>
+            <z> 0 </z>
+        </location>
+        <location name="EYEPOINT" unit="IN">
+            <x> 93.6 </x>
+            <y> -18.2 </y>
+            <z> 31.2 </z>
+        </location>
+        <location name="VRP" unit="IN">
+            <x> 0 </x>
+            <y> 0 </y>
+            <z> 0 </z>
+        </location>
+    </metrics>
+    
+    <mass_balance>
+        <ixx unit="SLUG*FT2"> 15784 </ixx>
+        <iyy unit="SLUG*FT2"> 15903 </iyy>
+        <izz unit="SLUG*FT2"> 34509 </izz>
+        <ixz unit="SLUG*FT2"> 0 </ixz>
+        <emptywt unit="LBS"> 12050 </emptywt>
+        <location name="CG" unit="IN">
+            <x> 211.8 </x>
+            <y> 0 </y>
+            <z> -14.9 </z>
+        </location>
+        <pointmass name="name">
+            <weight unit="LBS"> 230 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 93.6 </x>
+                <y> -18.2 </y>
+                <z> 8.4 </z>
+            </location>
+        </pointmass>
+    </mass_balance>
+    
+    <ground_reactions>
+        <contact type="BOGEY" name="NOSE_LG">
+            <location unit="IN">
+                <x> 75.5 </x>
+                <y> 0 </y>
+                <z> -118.2 </z>
+            </location>
+            <static_friction> 0.8 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 2982.6 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 994.2 </damping_coeff>
+            <max_steer unit="DEG"> 5 </max_steer>
+            <brake_group> NONE </brake_group>
+            <retractable>0</retractable>
+        </contact>
+        <contact type="BOGEY" name="LEFT_MLG">
+            <location unit="IN">
+                <x> 245.9 </x>
+                <y> -77.3 </y>
+                <z> -117.5 </z>
+            </location>
+            <static_friction> 0.8 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 9942 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 1988.4 </damping_coeff>
+            <max_steer unit="DEG"> 0.0 </max_steer>
+            <brake_group> LEFT </brake_group>
+            <retractable>0</retractable>
+        </contact>
+        <contact type="BOGEY" name="RIGHT_MLG">
+            <location unit="IN">
+                <x> 245.9 </x>
+                <y> 77.3 </y>
+                <z> -117.5 </z>
+            </location>
+            <static_friction> 0.8 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 9942 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 1988.4 </damping_coeff>
+            <max_steer unit="DEG"> 0.0 </max_steer>
+            <brake_group> RIGHT </brake_group>
+            <retractable>0</retractable>
+        </contact>
+    </ground_reactions>
+    <propulsion>
+        <engine file="GE-T700">
+            <location unit="IN">
+                <x> 142.4 </x>
+                <y> -109.3 </y>
+                <z> -2.88 </z>
+            </location>
+            <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 0 </pitch>
+                <yaw> 0 </yaw>
+            </orient>
+            <feed>0</feed>
+            <thruster file="direct">
+                <location unit="IN">
+                    <x> 142.4 </x>
+                    <y> -109.3 </y>
+                    <z> -2.88 </z>
+                </location>
+                <orient unit="DEG">
+                    <roll> 0.0 </roll>
+                    <pitch> 0.0 </pitch>
+                    <yaw> 0.0 </yaw>
+                </orient>
+            </thruster>
+        </engine>
+        <engine file="GE-T700">
+            <location unit="IN">
+                <x> 142.4 </x>
+                <y> 109.3 </y>
+                <z> -2.88 </z>
+            </location>
+            <orient unit="DEG">
+                <roll> 0.0 </roll>
+                <pitch> 0 </pitch>
+                <yaw> 0 </yaw>
+            </orient>
+            <feed>1</feed>
+            <thruster file="direct">
+                <location unit="IN">
+                    <x> 142.4 </x>
+                    <y> 109.3 </y>
+                    <z> -2.88 </z>
+                </location>
+                <orient unit="DEG">
+                    <roll> 0.0 </roll>
+                    <pitch> 0.0 </pitch>
+                    <yaw> 0.0 </yaw>
+                </orient>
+            </thruster>
+        </engine>
+        <tank type="FUEL">    <!-- Tank number 0 -->
+            <location unit="IN">
+                <x> 211.8 </x>
+                <y> 0 </y>
+                <z> 0 </z>
+            </location>
+            <capacity unit="LBS"> 1290.5 </capacity>
+            <contents unit="LBS"> 892.1 </contents>
+        </tank>
+        <tank type="FUEL">    <!-- Tank number 1 -->
+            <location unit="IN">
+                <x> 211.8 </x>
+                <y> 0 </y>
+                <z> 0 </z>
+            </location>
+            <capacity unit="LBS"> 1290.5 </capacity>
+            <contents unit="LBS"> 892.1 </contents>
+        </tank>
+    </propulsion>
+    <flight_control file = "Systems/flight_control"/>
+    <aerodynamics file = "Datcom/datcom_aero.xml"/>
+</fdm_config>
