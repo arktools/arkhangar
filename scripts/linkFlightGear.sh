@@ -1,5 +1,5 @@
 #!/bin/bash
-FlightGearRoot=/hsl/local/share/FlightGear
+FlightGearRoot=/usr/share/games/FlightGear
 FlightGearLocalRoot=$HOME/FlightGear
 UasNasRoot=$HOME/Projects/uas-nas/aircraft
 ArkHangarRoot=$HOME/Projects/arkhangar/aircraft

@@ -13,7 +13,7 @@
 <?xml-stylesheet href="JSBSim.xsl" type="application/xml"?>
 <fdm_config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="file:/home/torsten/FlightGear/Aircraft/SenecaII/JSBSim.xsd"
-    name="easystar-datcom" version="2.0" release="BETA">
+    name="easystar" version="2.0" release="BETA">
     
     <fileheader>
         <author>James Goppert</author>

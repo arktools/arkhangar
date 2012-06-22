@@ -1073,6 +1073,7 @@
                <property>metrics/Sw-sqft</property>
                <property>metrics/bw-ft</property>
                <property>aero/beta-deg</property>
+               <value>-1</value>
                <table>
                   <independentVar lookup="row">aero/alpha-deg</independentVar>
                   <tableData>
@@ -1154,6 +1155,7 @@
                <property>velocities/r-aero-rad_sec</property>
                <table>
                   <independentVar lookup="row">aero/alpha-deg</independentVar>
+                  <independentVar lookup="column">fcs/left-aileron-pos-deg</independentVar>
                   <tableData>
                        -16.00        -.8275E-03
                        -8.000        -.7745E-03
