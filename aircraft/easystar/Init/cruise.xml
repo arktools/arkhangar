@@ -2,7 +2,7 @@
 <initialize name="cruise with steady turn">
     <altitude unit="FT">    1000.0 </altitude>
     <elevation unit="FT">   0.0  </elevation>
-    <vt unit="FT/SEC">      120.0 </vt>
+    <vt unit="FT/SEC">      45.0 </vt>
     <gamma unit="DEG">      0.0 </gamma>
     <latitude unit="DEG">   37.62872151 </latitude>
     <longitude unit="DEG">  -122.3932853 </longitude>
