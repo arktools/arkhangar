@@ -7,13 +7,13 @@
         <status>early-production</status>
         <startup>
             <splash-title>Multiplex Easy Star (DATCOM aerodynamcis)</splash-title>
-			<splash-texture>Aircraft/easystar/easystar/splash.rgb</splash-texture>
+            <splash-texture>Aircraft/easystar/Models/splash.rgb</splash-texture>
         </startup>
         <model>
-            <path>Aircraft/easystar/easystar/Models/model.xml</path>
+            <path>Aircraft/easystar/Models/model.xml</path>
         </model>
         <sound>
-            <path>Aircraft/easystar/easystar/easystar-sound.xml</path>
+            <path>Aircraft/easystar/Systems/sound.xml</path>
         </sound>
 		<flight-model>jsb</flight-model>
         <aero>easystar</aero>

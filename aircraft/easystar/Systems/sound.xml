@@ -2,49 +2,49 @@
 <PropertyList>
     <fx>
         <!--<crank>-->
-        <!--<name>engstart</name>-->
-        <!--<path>Sounds/engstart.wav</path>-->
-        <!--<property>/engines/engine[0]/cranking</property>-->
-        <!--<position>-->
-        <!--<x>-2.0</x>-->
-        <!--<y>0.0</y>-->
-        <!--<z>-2.0</z>-->
-        <!--</position>-->
-        <!--<volume>-->
-        <!--<offset>0.4</offset>-->
-        <!--</volume>-->
+            <!--<name>engstart</name>-->
+            <!--<path>Sounds/engstart.wav</path>-->
+            <!--<property>/engines/engine[0]/cranking</property>-->
+            <!--<position>-->
+                <!--<x>-2.0</x>-->
+                <!--<y>0.0</y>-->
+                <!--<z>-2.0</z>-->
+            <!--</position>-->
+            <!--<volume>-->
+                <!--<offset>0.4</offset>-->
+            <!--</volume>-->
         <!--</crank>-->
         <!--<crank>-->
-        <!--<name>crank</name>-->
-        <!--<mode>looped</mode>-->
-        <!--<path>Sounds/cranking.wav</path>-->
-        <!--<condition>-->
-        <!--<property>/engines/engine[0]/cranking</property>-->
-        <!--<not>-->
-        <!--<property>/engines/engine[0]/running</property>-->
-        <!--</not>-->
-        <!--</condition>-->
-        <!--<position>-->
-        <!--<x>-2.0</x>-->
-        <!--<y>0.0</y>-->
-        <!--<z>-2.0</z>-->
-        <!--</position>-->
-        <!--<volume>-->
-        <!--<offset>0.5</offset>-->
-        <!--</volume>-->
+            <!--<name>crank</name>-->
+            <!--<mode>looped</mode>-->
+            <!--<path>Sounds/cranking.wav</path>-->
+            <!--<condition>-->
+                <!--<property>/engines/engine[0]/cranking</property>-->
+                <!--<not>-->
+                    <!--<property>/engines/engine[0]/running</property>-->
+                <!--</not>-->
+            <!--</condition>-->
+            <!--<position>-->
+                <!--<x>-2.0</x>-->
+                <!--<y>0.0</y>-->
+                <!--<z>-2.0</z>-->
+            <!--</position>-->
+            <!--<volume>-->
+                <!--<offset>0.5</offset>-->
+            <!--</volume>-->
         <!--</crank>-->
         <!--<crank>-->
-        <!--<name>cough</name>-->
-        <!--<path>Sounds/coughing.wav</path>-->
-        <!--<property>/engines/engine[0]/running</property>-->
-        <!--<position>-->
-        <!--<x>-2.0</x>-->
-        <!--<y>0.0</y>-->
-        <!--<z>-2.0</z>-->
-        <!--</position>-->
-        <!--<volume>-->
-        <!--<offset>0.3</offset>-->
-        <!--</volume>-->
+            <!--<name>cough</name>-->
+            <!--<path>Sounds/coughing.wav</path>-->
+            <!--<property>/engines/engine[0]/running</property>-->
+            <!--<position>-->
+                <!--<x>-2.0</x>-->
+                <!--<y>0.0</y>-->
+                <!--<z>-2.0</z>-->
+            <!--</position>-->
+            <!--<volume>-->
+                <!--<offset>0.3</offset>-->
+            <!--</volume>-->
         <!--</crank>-->
         <engine>
             <name>engine</name>
@@ -71,7 +71,7 @@
                 <offset>0.3</offset>
             </pitch>
         </engine>
-        
+
         <squeal>
             <name>squeal</name>
             <path>Sounds/squeal.wav</path>
