@@ -60,9 +60,9 @@
         MASS_BALANCE
         ********************************************************************** -->
     <mass_balance>
-		<ixx unit="SLUG*FT2"> 2.0 </ixx>
-        <iyy unit="SLUG*FT2"> 1.31 </iyy>
-        <izz unit="SLUG*FT2"> 2.64 </izz>
+		<ixx unit="SLUG*FT2"> 0.059 </ixx>
+        <iyy unit="SLUG*FT2"> 0.02465 </iyy>
+        <izz unit="SLUG*FT2"> 0.07869 </izz>
 		<ixz unit="SLUG*FT2"> 0.0 </ixz>
         <emptywt unit="LBS"> 2.0 </emptywt>
         <!-- the center of gravity -->
