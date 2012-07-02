@@ -253,7 +253,7 @@
             </summer>
             <aerosurface_scale name="Rudder Control">
                 <input>fcs/yaw-mix</input>
-                <gain>0.01745</gain>
+                <gain>-0.01745</gain>
                 <range>
                     <min>-27</min>
                     <max>27</max>
