@@ -3,3 +3,4 @@ build
 .nfs*
 *.blend1
 initfile.xml
+.~*
