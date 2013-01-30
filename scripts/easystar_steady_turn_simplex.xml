@@ -10,7 +10,7 @@
     is printed out at ten second intervals. 
   </description>
 
-  <use aircraft="easystar" initialize="cruise_steady_turn_init"/> 
+  <use aircraft="easystar" initialize="Init/cruise_steady_turn"/> 
 
   <run start="0" end="100" dt="0.008333">
 
